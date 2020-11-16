@@ -1,0 +1,30 @@
+%h1 Virtual Garage
+
+%table
+  %thead
+    %tr
+      %th
+      %th Make
+      %th Model
+      %th Engine
+      %th Transmission
+      %th Description
+      %th
+      %th
+
+  %tbody
+    - @cars.each do |car|
+      %tr
+        %td= image_tag car.image.url(:medium) 
+        %td= car.make
+        %td= car.model
+        %td= car.engine
+        %td= car.transmission
+        %td= car.description
+        %td= link_to 'Show', car
+        %td= link_to 'Edit', edit_car_path(car)
+        %td= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Car', new_car_path
