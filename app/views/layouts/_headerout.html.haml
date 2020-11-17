@@ -1,0 +1,19 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand Virtual Garage
+    %ul.nav.navbar-nav
+      %li.active
+        %a{:href => root_path} Home
+      %li
+        %a{:href => "#"} Page 1
+      %li
+        %a{:href => "#"} Page 2
+    %ul.nav.navbar-nav.navbar-right
+      //%li 
+      //%strong= current_user.email       
+      %li
+        = link_to('Sign out', destroy_user_session_path, method: :delete)
+        
+        
+

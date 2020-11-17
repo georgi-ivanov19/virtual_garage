@@ -13,7 +13,14 @@
     <% flash.each do |name, msg| %>
 		  		<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
-
+    -
+    <% if user_signed_in? %>
+      <%= render 'layouts/headerout' %>
+      <% else %>
+      <%= render 'layouts/headerin' %>
+    <% end %>
+    
+    
     <%= yield %>
   </body>
 </html>
