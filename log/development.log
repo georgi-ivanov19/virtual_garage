@@ -3917,3 +3917,1121 @@ Processing by CarsController#index as HTML
 Completed 200 OK in 775ms (Views: 709.8ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for ::1 at 2020-11-18 11:58:52 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (3.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:16
+  Rendered cars/index.html.haml within layouts/application (63.0ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"cars"}, missing required keys: [:id]):
+    15:   %tbody
+    16:     - @cars.each do |car|
+    17:       %tr
+    18:         %a{:href => car_path}
+    19:           %td= image_tag car.image.url, :class => "image"
+    20:         %td= car.make
+    21:         %td= car.model
+  
+app/views/cars/index.html.haml:18:in `block in _app_views_cars_index_html_haml__1918607909082605806_97040'
+app/views/cars/index.html.haml:16:in `_app_views_cars_index_html_haml__1918607909082605806_97040'
+Started GET "/" for ::1 at 2020-11-18 12:06:01 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: "  \t    \t" used for indentation, but the rest of the document was indented using 2 spaces.):
+    15:   %tbody
+    16:     .row
+    17:       - @cars.each do |car|
+    18:   	    	.col-sm-6.col-md-3
+    19:             .thumbnail
+    20:               = link_to(image_tag car.image.url, class: 'image'), car
+    21:         //%tr
+  
+app/views/cars/index.html.haml:18
+Started GET "/" for ::1 at 2020-11-18 12:06:12 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: "  \t    " used for indentation, but the rest of the document was indented using 2 spaces.):
+    15:   %tbody
+    16:     .row
+    17:       - @cars.each do |car|
+    18:   	    .col-sm-6.col-md-3
+    19:           .thumbnail
+    20:             = link_to(image_tag car.image.url, class: 'image'), car
+    21:         //%tr
+  
+app/views/cars/index.html.haml:18
+Started GET "/" for ::1 at 2020-11-18 12:06:32 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: "  \t    " used for indentation, but the rest of the document was indented using 2 spaces.):
+    15:   %tbody
+    16:     .row
+    17:       - @cars.each do |car|
+    18:   	    .col-sm-6.col-md-3
+    19:           .thumbnail
+    20:             = link_to(image_tag car.image.url, class: 'image'), car
+    21:         //%tr
+  
+app/views/cars/index.html.haml:18
+Started GET "/" for ::1 at 2020-11-18 12:07:12 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: "  \t" used for indentation, but the rest of the document was indented using 2 spaces.):
+    15:   %tbody
+    16:     .row
+    17:   - @cars.each do |car|
+    18:   	.col-sm-6.col-md-3
+    19:       .thumbnail
+    20:         = link_to (image_tag car.image.url, class: 'image'), car
+    21:         //%tr
+  
+app/views/cars/index.html.haml:18
+Started GET "/" for ::1 at 2020-11-18 12:07:32 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:17
+  Rendered cars/index.html.haml within layouts/application (8.7ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.4ms)
+Completed 200 OK in 780ms (Views: 721.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/cars/4" for ::1 at 2020-11-18 12:07:39 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (2.8ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.4ms)
+Completed 200 OK in 682ms (Views: 624.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/cars/4" for ::1 at 2020-11-18 12:08:02 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (2.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 718ms (Views: 651.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/cars/4/edit" for ::1 at 2020-11-18 12:08:05 +0200
+Processing by CarsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering cars/edit.html.haml within layouts/application
+  Rendered cars/_form.html.haml (65.9ms)
+  Rendered cars/edit.html.haml within layouts/application (124.9ms)
+  Rendered layouts/_headerout.html.haml (3.6ms)
+Completed 200 OK in 814ms (Views: 755.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 12:08:09 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:17
+  Rendered cars/index.html.haml within layouts/application (5.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 662ms (Views: 608.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/cars/4" for ::1 at 2020-11-18 12:08:28 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (3.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 749ms (Views: 681.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/cars/4/edit" for ::1 at 2020-11-18 12:08:43 +0200
+Processing by CarsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (2.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering cars/edit.html.haml within layouts/application
+  Rendered cars/_form.html.haml (5.9ms)
+  Rendered cars/edit.html.haml within layouts/application (60.1ms)
+  Rendered layouts/_headerout.html.haml (7.1ms)
+Completed 200 OK in 798ms (Views: 728.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/cars/4/" for ::1 at 2020-11-18 12:12:40 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (249.7ms)
+Completed 500 Internal Server Error in 454ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `car' for #<#<Class:0x000055c660b01ea0>:0x00007f2459482680>
+Did you mean?  @car):
+    20: \|
+    21: = link_to 'Back', cars_path
+    22: \|
+    23: = link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }
+  
+app/views/cars/show.html.haml:23:in `_app_views_cars_show_html_haml__2770405899595219349_100320'
+Started GET "/cars/4/" for ::1 at 2020-11-18 12:13:55 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.7ms)
+Completed 200 OK in 778ms (Views: 685.4ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/cars/4" for ::1 at 2020-11-18 12:14:04 +0200
+Processing by CarsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jc7ZBQrMwnc+0ZFMatoH2Uaq9krl/Td77HVPBFcl4wN1szyj6xwXS3AdxA/PM+U4JubCeTLaI86wArTcON1FZQ==", "id"=>"4"}
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:58
+  [1m[36mCar Destroy (8.6ms)[0m  [1m[31mDELETE FROM "cars" WHERE "cars"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/cars_controller.rb:58
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:58
+[paperclip] deleting /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/public/system/cars/images/000/000/004/original/84411180_569093193748019_1992735684267343872_n.jpg
+[paperclip] deleting /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/public/system/cars/images/000/000/004/medium/84411180_569093193748019_1992735684267343872_n.jpg
+Redirected to http://localhost:3000/cars
+Completed 302 Found in 105ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 12:14:04 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:17
+  Rendered cars/index.html.haml within layouts/application (5.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 707ms (Views: 651.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 12:15:47 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:37: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/cars/index.html.haml:37: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/cars" for ::1 at 2020-11-18 12:16:35 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.9ms)
+Completed 200 OK in 752ms (Views: 691.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/cars/new" for ::1 at 2020-11-18 12:16:39 +0200
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering cars/new.html.haml within layouts/application
+  Rendered cars/_form.html.haml (6.0ms)
+  Rendered cars/new.html.haml within layouts/application (60.2ms)
+  Rendered layouts/_headerout.html.haml (8.7ms)
+Completed 200 OK in 1017ms (Views: 771.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/cars" for ::1 at 2020-11-18 12:16:58 +0200
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2nHdRXi7+jNOeuqS9NteGKjdxCf7OS/Hp9op1gGSXIuspUoWseKxjTzAXbbFYbYwnh4HzrgMRunH6c/B3YsmA==", "car"=>{"make"=>"BMW", "model"=>"318IS", "engine"=>"M42B18", "transmission"=>"Manual", "description"=>"very fast", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f246428a098 @tempfile=#<Tempfile:/tmp/RackMultipart20201118-581-t210r1.jpg>, @original_filename="84411180_569093193748019_1992735684267343872_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"car[image]\"; filename=\"84411180_569093193748019_1992735684267343872_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-1dfst36.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-1dfst36.jpg[0]'
+Command :: convert '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-1dfst36.jpg[0]' -auto-orient -resize "400x" -crop "400x600+0+55" +repage '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-1dfst3620201118-581-dte3c7'
+Command :: file -b --mime '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-1dfst3620201118-581-dte3c7'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:31
+Command :: file -b --mime '/tmp/953ad19c801e53709a2cb8eb748fbdc020201118-581-14zcfs9.jpg'
+  [1m[36mCar Create (5.9ms)[0m  [1m[32mINSERT INTO "cars" ("make", "model", "engine", "transmission", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["make", "BMW"], ["model", "318IS"], ["engine", "M42B18"], ["transmission", "Manual"], ["description", "very fast"], ["created_at", "2020-11-18 10:16:58.842015"], ["updated_at", "2020-11-18 10:16:58.842015"], ["user_id", 1], ["image_file_name", "84411180_569093193748019_1992735684267343872_n.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 288707], ["image_updated_at", "2020-11-18 10:16:58.471771"]]
+  ↳ app/controllers/cars_controller.rb:31
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:31
+Redirected to http://localhost:3000/cars/5
+Completed 302 Found in 535ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/cars/5" for ::1 at 2020-11-18 12:16:59 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 688ms (Views: 625.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 12:17:02 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.3ms)
+Completed 200 OK in 702ms (Views: 646.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/cars/new" for ::1 at 2020-11-18 12:17:12 +0200
+Processing by CarsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering cars/new.html.haml within layouts/application
+  Rendered cars/_form.html.haml (5.3ms)
+  Rendered cars/new.html.haml within layouts/application (55.0ms)
+  Rendered layouts/_headerout.html.haml (9.7ms)
+Completed 200 OK in 766ms (Views: 711.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/cars" for ::1 at 2020-11-18 12:21:41 +0200
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g5paOxHUW3p8rKT37QIEHaURpevNxLo0W+e41bVh7lmyQQhmXvE+VIVmTit9xO+9Bcqq5GjIb5DiZ3dN6hGLsw==", "car"=>{"make"=>"NISSAN", "model"=>"Silvia S13", "engine"=>"SR20DET ", "transmission"=>"Manual", "description"=>"very drift", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2459479238 @tempfile=#<Tempfile:/tmp/RackMultipart20201118-581-1jns2u8.jpg>, @original_filename="drift.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"car[image]\"; filename=\"drift.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Save"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-2pkx3p.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-2pkx3p.jpg[0]'
+Command :: convert '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-2pkx3p.jpg[0]' -auto-orient -resize "x600" -crop "400x600+333+0" +repage '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-2pkx3p20201118-581-7l5zy7'
+Command :: file -b --mime '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-2pkx3p20201118-581-7l5zy7'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:31
+Command :: file -b --mime '/tmp/ce5f36294ed1e4ed9f6d27f5d1899e1420201118-581-1h03gi3.jpg'
+  [1m[36mCar Create (7.3ms)[0m  [1m[32mINSERT INTO "cars" ("make", "model", "engine", "transmission", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["make", "NISSAN"], ["model", "Silvia S13"], ["engine", "SR20DET "], ["transmission", "Manual"], ["description", "very drift"], ["created_at", "2020-11-18 10:21:41.457371"], ["updated_at", "2020-11-18 10:21:41.457371"], ["user_id", 1], ["image_file_name", "drift.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 249374], ["image_updated_at", "2020-11-18 10:21:41.329029"]]
+  ↳ app/controllers/cars_controller.rb:31
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:31
+Redirected to http://localhost:3000/cars/6
+Completed 302 Found in 324ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/cars/6" for ::1 at 2020-11-18 12:21:41 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.7ms)
+Completed 200 OK in 699ms (Views: 639.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 12:21:44 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (5.8ms)
+Completed 200 OK in 712ms (Views: 657.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:43:11 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (8.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.6ms)
+Completed 200 OK in 757ms (Views: 697.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:47:51 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 749ms (Views: 686.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:49:09 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 4292ms (Views: 4232.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:50:52 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 732ms (Views: 674.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:52:05 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (8.2ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 4202ms (Views: 4141.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:52:48 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 739ms (Views: 683.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:52:58 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.7ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.9ms)
+Completed 200 OK in 785ms (Views: 727.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 15:53:07 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.6ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (11.1ms)
+Completed 200 OK in 801ms (Views: 742.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/cars/6" for ::1 at 2020-11-18 15:55:50 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (1.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (5.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 726ms (Views: 669.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-11-18 15:58:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-11-18 15:58:05 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 731ms (Views: 674.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:01:44 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 3960ms (Views: 3907.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:02:23 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.8ms)
+Completed 200 OK in 3953ms (Views: 3897.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:03:06 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.0ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 4174ms (Views: 4108.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:06:54 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 4040ms (Views: 3981.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:07:23 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 751ms (Views: 694.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:09:37 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  Rendered cars/index.html.haml within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:8: syntax error, unexpected string literal, expecting =>
+...ge.url, class: 'image', :size '250x200', :crop 'fill'), car
+...                              ^
+/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:8: syntax error, unexpected ',', expecting ')'
+...lass: 'image', :size '250x200', :crop 'fill'), car
+...                              ^
+/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:8: syntax error, unexpected ',', expecting ')'
+...:size '250x200', :crop 'fill'), car
+...                              ^
+/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+)).to_s);).to_s);; _hamlout.buffer << ("\n</d...
+               ^
+/mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/views/cars/index.html.haml:12: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/cars/index.html.haml:8: syntax error, unexpected string literal, expecting =>
+app/views/cars/index.html.haml:8: syntax error, unexpected ',', expecting ')'
+app/views/cars/index.html.haml:8: syntax error, unexpected ',', expecting ')'
+app/views/cars/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/cars/index.html.haml:12: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/" for ::1 at 2020-11-18 16:09:55 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 802ms (Views: 730.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:10:51 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 3937ms (Views: 3881.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:12:17 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.3ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 4377ms (Views: 4321.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:12:23 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.4ms)
+Completed 200 OK in 652ms (Views: 599.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:12:27 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (7.6ms)
+Completed 200 OK in 725ms (Views: 661.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:12:30 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 675ms (Views: 612.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:12:32 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (11.9ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.8ms)
+Completed 200 OK in 849ms (Views: 791.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:12:36 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 726ms (Views: 671.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/cars/5" for ::1 at 2020-11-18 16:12:38 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.3ms)
+Completed 200 OK in 684ms (Views: 631.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/cars/6" for ::1 at 2020-11-18 16:12:39 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 707ms (Views: 656.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:14:19 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (8.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 738ms (Views: 684.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:14:40 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 743ms (Views: 685.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:15:14 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 769ms (Views: 707.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:15:41 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 794ms (Views: 716.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:17:04 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 4216ms (Views: 4157.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:17:34 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 4151ms (Views: 4093.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:18:15 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (8.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 742ms (Views: 681.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:18:58 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.3ms)
+Completed 200 OK in 778ms (Views: 717.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:19:21 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.0ms)
+Completed 200 OK in 4044ms (Views: 3974.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:19:59 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.8ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.1ms)
+Completed 200 OK in 4054ms (Views: 3994.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cars/5" for ::1 at 2020-11-18 16:20:30 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCar Load (1.1ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 693ms (Views: 639.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:22:48 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.8ms)
+Completed 200 OK in 4119ms (Views: 4059.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:23:05 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 763ms (Views: 705.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:23:18 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (2.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (7.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (4.6ms)
+Completed 200 OK in 3991ms (Views: 3925.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:23:36 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (5.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 739ms (Views: 682.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/cars/5" for ::1 at 2020-11-18 16:25:01 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCar Load (1.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.8ms)
+Completed 200 OK in 4274ms (Views: 4216.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/cars/5" for ::1 at 2020-11-18 16:25:05 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (5.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (2.9ms)
+Completed 200 OK in 867ms (Views: 784.5ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/cars/5" for ::1 at 2020-11-18 16:25:09 +0200
+Processing by CarsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5lXMr9yhM3wg3KfZUjA2z6IMYchfwwIeFfoZeOW2jDi2KCkJPXHmQG4Q8pr32dQuwkBV+4jkFqtJjeKgik4qXg==", "id"=>"5"}
+  [1m[36mCar Load (2.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jorjooo/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cars_controller.rb:58
+  [1m[36mCar Destroy (6.4ms)[0m  [1m[31mDELETE FROM "cars" WHERE "cars"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/cars_controller.rb:58
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cars_controller.rb:58
+[paperclip] deleting /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/public/system/cars/images/000/000/005/original/84411180_569093193748019_1992735684267343872_n.jpg
+[paperclip] deleting /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/public/system/cars/images/000/000/005/medium/84411180_569093193748019_1992735684267343872_n.jpg
+Redirected to http://localhost:3000/cars
+Completed 302 Found in 85ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/cars" for ::1 at 2020-11-18 16:25:09 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (6.6ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.6ms)
+Completed 200 OK in 754ms (Views: 698.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cars/6" for ::1 at 2020-11-18 16:25:30 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.2ms)
+Completed 200 OK in 713ms (Views: 656.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-11-18 16:25:42 +0200
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.haml within layouts/application
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/views/cars/index.html.haml:5
+  Rendered cars/index.html.haml within layouts/application (4.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (8.6ms)
+Completed 200 OK in 787ms (Views: 731.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/cars/new" for ::1 at 2020-11-18 16:25:45 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/cars/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/cars/new" for ::1 at 2020-11-18 16:26:05 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/cars/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cars/6" for ::1 at 2020-11-18 16:26:09 +0200
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (1.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cars_controller.rb:68
+  Rendering cars/show.html.haml within layouts/application
+  Rendered cars/show.html.haml within layouts/application (2.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layouts/_headerout.html.haml (3.4ms)
+Completed 200 OK in 696ms (Views: 641.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/cars/6/edit" for ::1 at 2020-11-18 16:26:11 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/cars/6/edit"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

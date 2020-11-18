@@ -3,15 +3,15 @@
     .navbar-header
       %a.navbar-brand Virtual Garage
     %ul.nav.navbar-nav
-      %li.active
+      %li
         %a{:href => root_path} Home
       %li
-        %a{:href => "#"} Page 1
-      %li
-        %a{:href => "#"} Page 2
+        %a{:href => new_car_path} Add a car
     %ul.nav.navbar-nav.navbar-right
       //%li 
-      //%strong= current_user.email       
+      //%strong= current_user.email 
+      %li
+        %a{:href => "#"} Contact us      
       %li
         %a{:href => destroy_user_session_path, :method => :delete}
           %span.glyphicon.glyphicon-log-in

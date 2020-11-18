@@ -1,10 +1,11 @@
 %h1 Virtual Garage
-
 %body
   .row
 - @cars.each do |car|
   .col-sm-6.col-md-3
-    .thumbnail
-      = link_to (image_tag car.image.url, class: 'image'), car
-%br
-= button_to 'Add a car', new_car_path
+    .container
+      = link_to (image_tag car.image.url, class: 'img-responsive'), car
+      .caption
+        %p 
+          = car.make + ', ' + car.model + ', ' + car.engine
+
