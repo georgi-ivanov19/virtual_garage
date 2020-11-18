@@ -20,18 +20,23 @@
     body{
         background-color: $bg-color;
     }
-    .container{
-        object-fit: fill;
-        align-items: center;
-        height: 200px;
-        width: 350px;
-        transition: width 0.2s, height 0.2s;
-        border: 0px;              
+
+    h1{
+        padding-left: 30px;
     }
 
-    .container:hover{
-        width: 360px;
-        height: 210px;
+    .container-fluid.cars{    
+        margin:30px;
+        object-fit: fill;
+        align-items: center;
+        height: 250px;
+        width: 400px;                              
+    }
+
+    .container-fluid.cars:hover{
+        .caption{
+            font-weight: bold;
+        }
     }
 
     .caption{
@@ -43,4 +48,19 @@
         width: 100%;
         height: 100%;
     }
-    
+
+    #login{
+        padding-left: 30px;
+    }
+
+    .field{
+        padding-left: 30px;
+    }
+
+    .actions{
+        padding-left: 30px;
+    }
+
+    .link{
+        padding-left: 30px;
+    }

@@ -1,3 +1,4 @@
+
 %p#notice= notice
 
 %p
@@ -16,8 +17,11 @@
   %b Description:
   = @car.description
 
+
 = link_to 'Edit', edit_car_path(@car)
 \|
-= link_to 'Back', cars_path
-\|
 = link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }
+\|
+= link_to 'Back', cars_path
+
+
