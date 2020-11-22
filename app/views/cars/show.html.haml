@@ -15,13 +15,16 @@
   = @car.transmission
 %p
   %b Description:
-  = @car.description
+  = @car.description 
+%p
+  %b Added by:
+  = @car.user.email
+- if current_user.id = @car.user_id?
+  = link_to 'Edit', edit_car_path(@car)
+  \|
+  = link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }
 
-
-= link_to 'Edit', edit_car_path(@car)
-\|
-= link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }
-\|
-= link_to 'Back', cars_path
+%textarea.forumPost.form-control{:rows => 4, :cols => , :placeholder => 'Enter a comment...'}
+%button.btn.btn-default{:type => "submit"} Submit
 
 

@@ -26,7 +26,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = current_user.cars.build(car_params)
-
+    
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }
