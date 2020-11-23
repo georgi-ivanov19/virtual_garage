@@ -18,9 +18,12 @@
         @import 'bootstrap';
         $bg-color: #dddddd;
     body{
-        background-color: $bg-color;
+        background-image: url("assets/virtualgar-02-01.jpg");
     }
-
+    #logo{
+        width: 300px;
+        height: 50px;
+    }
     h1{
         padding-left: 30px;
     }

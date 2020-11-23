@@ -1,7 +1,8 @@
-%nav.navbar.navbar-inverse
+%nav.navbar.navbar-light{:style => "background-color: #e3f2fd;"}
   .container-fluid
     .navbar-header
-      %a.navbar-brand= t('title')
+      %navbar-brand
+        %img{:src => '/assets/virtualgarage.png', :id => 'logo'}
     %ul.nav.navbar-nav
       %li
         %a{:href => root_path} Home
@@ -9,9 +10,7 @@
         %a{:href => new_car_path} Add a car
       %li
         %a{:href =>  edit_user_registration_path} My Account
-    %ul.nav.navbar-nav.navbar-right
-      //%li 
-      //%strong= current_user.email 
+    %ul.nav.navbar-nav.navbar-right 
       %li
         %a{:href => "#"} Contact us      
       %li
