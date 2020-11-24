@@ -1,4 +1,3 @@
-
 %p#notice= notice
 
 %p
@@ -30,9 +29,6 @@
 //%button.btn.btn-default{:type => "submit"} Submit  
 //= text_area :comment, method: :POST
 //= button_to "SUBMIT", :action => comment_create, :method => 'POST', 
-- @comment = current_user.comments.new
 = render 'comments/form'
   
 = link_to  'Add a comment', new_comment_path
-  
-

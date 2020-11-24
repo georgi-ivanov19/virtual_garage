@@ -13,10 +13,9 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/new
-  def new
-    @comment = current_user.comments.build
-  end
-
+  # def new
+  #   @comment = current_user.comments.build
+  # end
   
   # GET /comments/1/edit
   def edit
@@ -25,11 +24,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_user.comments.build([{content:"anything"}, {car_id: 13}])
+    @comment = current_user.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_back fallback_location:'/', notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -70,6 +69,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content,:car_id)
+      params.require(:comment).permit(:content, :car_id)
     end
 end
