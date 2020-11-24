@@ -24,7 +24,15 @@
   \|
   = link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }
 
-%textarea.forumPost.form-control{:rows => 4, :cols => 30, :placeholder => 'Enter a comment...', :id => 'comment'}
-%button.btn.btn-default{:type => "submit"} Submit
 
+//%form{:name => "add_comment", :method => 'post'}  
+//%textarea.forumPost.form-control{:rows => '4', :cols => '30', :placeholder => 'Enter a comment...', :name => 'content'}
+//%button.btn.btn-default{:type => "submit"} Submit  
+//= text_area :comment, method: :POST
+//= button_to "SUBMIT", :action => comment_create, :method => 'POST', 
+- @comment = current_user.comments.new
+= render 'comments/form'
+  
+= link_to  'Add a comment', new_comment_path
+  
 

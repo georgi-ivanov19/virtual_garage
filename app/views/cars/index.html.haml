@@ -2,7 +2,7 @@
 - @cars.each do |car|
   .col-sm-12.col-md-6.col-lg-4
     .container-fluid.cars
-      = link_to (image_tag car.image.url, class: 'img-responsive'), car
+      = link_to (image_tag car.image.url, class: 'img-responsive', class: 'thumbnail' ), car
       .caption
         %p 
           = car.make + ', ' + car.model + ', ' + car.engine

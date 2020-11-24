@@ -1,8 +1,9 @@
-%nav.navbar.navbar-light{:style => "background-color: #e3f2fd;"}
+%nav.navbar.navbar-inverse
   .container-fluid
     .navbar-header
-      %navbar-brand
-        %img{:src => '/assets/virtualgarage.png', :id => 'logo'}
+      %div{:calss => 'logo_area'}
+        %navbar-brand
+          %img{:src => '/assets/virtualgarage.png', :id => 'logo'}
     %ul.nav.navbar-nav
       %li
         %a{:href => root_path} Home
@@ -10,14 +11,16 @@
         %a{:href => new_car_path} Add a car
       %li
         %a{:href =>  edit_user_registration_path} My Account
+      %li
+        //TODO 
+        %a{:href => root_path} My Cars       
     %ul.nav.navbar-nav.navbar-right 
       %li
         %a{:href => "#"} Contact us      
       %li
         %a{:href => destroy_user_session_path, :method => :delete}
           %span.glyphicon.glyphicon-log-in
-          Sign out 
-        //figure out why this does not work
+          Sign out
         
         
 

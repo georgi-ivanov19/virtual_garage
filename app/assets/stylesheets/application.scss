@@ -17,13 +17,26 @@
     	@import 'bootstrap-sprockets';
         @import 'bootstrap';
         $bg-color: #dddddd;
-    body{
-        background-image: url("assets/virtualgar-02-01.jpg");
+
+    body {
+        background-image: asset_url("virtualgar-02-01.jpg");   
+        background-size: cover; 
     }
+    
     #logo{
-        width: 300px;
-        height: 50px;
+        width: 377px;
+        position: relative;
+        margin: auto;
+        padding: 10px;
     }
+
+    //make the navigation bar items more spaced out
+    ul{
+        li{
+            margin-left: 20px;
+        }   
+    }
+    
     h1{
         padding-left: 30px;
     }
@@ -33,7 +46,7 @@
         object-fit: fill;
         align-items: center;
         height: 250px;
-        width: 400px;                              
+        width: 400px;                            
     }
 
     .container-fluid.cars:hover{
@@ -49,12 +62,28 @@
 
     .img-responsive{
         width: 100%;
-        height: 100%;
+        //height: 100%;
+    }
+    .thumbnail{
+        width: 100%;
+        padding: 3px;
     }
 
     #login{
         padding-left: 30px;
     }
+
+    .form_wrapper{
+        display: inline-block;
+        padding-right: 20px;
+        background-color: #222;
+        position: fixed;
+        color: darkgray;
+         .button{
+            color: black;
+        }
+
+    }  
 
     .field{
         padding-left: 30px;

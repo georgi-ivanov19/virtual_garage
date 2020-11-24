@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build
   end
 
+  
   # GET /comments/1/edit
   def edit
   end
@@ -24,7 +25,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = current_user.comments.build([{content:"anything"}, {car_id: 13}])
 
     respond_to do |format|
       if @comment.save
@@ -69,6 +70,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content,:car_id)
     end
 end

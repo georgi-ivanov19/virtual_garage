@@ -9,5 +9,11 @@
   .field
     = f.label :content
     = f.text_area :content
+
+  //= f.hidden_field :car_id, value: 13
+  .field
+    =f.label :car_id
+    =f.text_area :car_id
+
   .actions
     = f.submit 'Save'
