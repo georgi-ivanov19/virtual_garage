@@ -16,7 +16,6 @@
 
     	@import 'bootstrap-sprockets';
         @import 'bootstrap';
-        $bg-color: #dddddd;
 
     body {
         background-image: asset_url("virtualgar-02-01.jpg");   
@@ -41,20 +40,6 @@
         padding-left: 30px;
     }
 
-    .container-fluid.cars{    
-        margin:30px;
-        object-fit: fill;
-        align-items: center;
-        height: 250px;
-        width: 400px;                            
-    }
-
-    .container-fluid.cars:hover{
-        .caption{
-            font-weight: bold;
-        }
-    }
-
     .caption{
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
@@ -73,26 +58,10 @@
         padding-left: 30px;
     }
 
-    .form_wrapper{
-        display: inline-block;
-        padding-right: 20px;
-        background-color: #222;
-        position: fixed;
-        color: darkgray;
-         .button{
-            color: black;
-        }
-
-    }  
-
-    .field{
-        padding-left: 30px;
+    .new-car-field{
+        padding-left: 20px;
     }
 
     .actions{
-        padding-left: 30px;
-    }
-
-    .link{
         padding-left: 30px;
     }

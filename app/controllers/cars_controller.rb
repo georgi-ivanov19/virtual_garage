@@ -7,11 +7,15 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
   end
-
+  
+  def my_cars
+    @cars = Car.all
+  end
   # GET /cars/1
   # GET /cars/1.json
   def show
     @comment = current_user.comments.new
+    @comments = Comment.order("id DESC")
   end
 
   # GET /cars/new

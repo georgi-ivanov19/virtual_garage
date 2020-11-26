@@ -1,3 +1,66 @@
 // Place all the styles related to the Cars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.col-sm-12.col-md-6.col-lg-4{
+    margin:30px;
+    padding: 0px;
+    object-fit: fill;
+    object-position: initial;
+    align-items: center;
+    height: 250px;
+    width: 400px;
+    max-height: 600px;
+}
+.caption{
+    margin-bottom: 20px;
+}
+.col-sm-12.col-md-6.col-lg-4:hover{
+    .caption{
+        font-weight: bold;
+    }
+}
+.show-img{
+    width: 620px;
+    padding: 20px;
+    float: left;
+    border-style: solid;
+}
+.car-show{
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    #car-show-email{
+        float: left;
+    }
+}
+
+.link-button{
+    text-align: center;
+    width: 100px;
+    float: right;
+    padding: 20px;
+    margin: 10px;
+    font: bold 16px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    transition: 0.2s;    
+}
+.link-button:hover{
+    background-color: fade-in($color: darkgrey, $amount: 1);;
+}
+.form_wrapper{
+    display: inline-block;
+    padding-right: 20px;
+    background-color: #222;
+    position: fixed;
+    color: darkgray;
+     .button{
+        color: black;
+    }
+}
+

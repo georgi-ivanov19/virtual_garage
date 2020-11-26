@@ -1,34 +1,34 @@
 %p#notice= notice
-
-%p
-  %b Make:
-  = @car.make
-%p
-  %b Model:
-  = @car.model
-%p
-  %b Engine:
-  = @car.engine
-%p
-  %b Transmission:
-  = @car.transmission
-%p
-  %b Description:
-  = @car.description 
-%p
-  %b Added by:
-  = @car.user.email
-- if current_user.id = @car.user_id?
-  = link_to 'Edit', edit_car_path(@car)
-  \|
-  = link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }
-
-
-//%form{:name => "add_comment", :method => 'post'}  
-//%textarea.forumPost.form-control{:rows => '4', :cols => '30', :placeholder => 'Enter a comment...', :name => 'content'}
-//%button.btn.btn-default{:type => "submit"} Submit  
-//= text_area :comment, method: :POST
-//= button_to "SUBMIT", :action => comment_create, :method => 'POST', 
+%div.show_wrapper
+  = image_tag @car.image.url, class: 'img-responsive', :class => 'show-img'
+  %p.car-show
+    %b Make:
+    = @car.make
+  %p.car-show
+    %b Model:
+    = @car.model
+  %p.car-show
+    %b Engine:
+    = @car.engine
+  %p.car-show
+    %b Transmission:
+    = @car.transmission
+  %p.car-show
+    %b Description:
+    = @car.description 
+  %p.car-show{id: 'car-show-email'}
+    %b Added by:
+    = @car.user.email
+    - if current_user.id = @car.user_id?
+      = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
+      = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }
+%br
 = render 'comments/form'
-  
-= link_to  'Add a comment', new_comment_path
+%br
+%div.comment-section-wrapper
+  %h2 Comments
+  - @comments.each do |comment|
+    -if comment.car_id == @car.id
+      %p
+        ="#{comment.user.email} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
+     

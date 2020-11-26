@@ -8,22 +8,22 @@
           - @car.errors.full_messages.each do |message|
             %li= message
 
-    .field
+    .field.new-car-field
       = f.label :make
       = f.text_field :make
-    .field
+    .field.new-car-field
       = f.label :model
       = f.text_field :model
-    .field
+    .field.new-car-field
       = f.label :engine
       = f.text_field :engine
-    .field
+    .field.new-car-field
       = f.label :transmission
       = f.text_field :transmission
-    .field
+    .field.new-car-field
       = f.label :description
       = f.text_field :description
-    .field
+    .field.new-car-field
       = f.label :image
       = f.file_field :image
 
