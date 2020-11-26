@@ -7,11 +7,11 @@
     object-fit: fill;
     object-position: initial;
     align-items: center;
-    height: 250px;
+    height: 300px;
     width: 400px;
     max-height: 600px;
 }
-.caption{
+.index_link{
     margin-bottom: 20px;
 }
 .col-sm-12.col-md-6.col-lg-4:hover{
@@ -33,7 +33,11 @@
         float: left;
     }
 }
-
+.caption{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
 .link-button{
     text-align: center;
     width: 100px;

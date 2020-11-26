@@ -16,8 +16,13 @@
       <%= render 'layouts/headerout' %>
       <% else %>
       <%= render 'layouts/headerin' %>
-    <% end %> 
-    <%= yield %>
-    <%= render 'layouts/footer'%>
+    <% end %>
+    <div class = 'content-wrapper'> 
+      <%= yield %>
+      <div class = 'push'></div>
+    </div>
+    <footer>
+      <%=render 'layouts/footer'%>
+    </footer>
   </body>
 </html>

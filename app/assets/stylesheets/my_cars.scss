@@ -1,0 +1,32 @@
+body{
+    background-image: asset_url("garage_door_bg.jpg");   
+    background-size: cover;
+}
+.col-12.garage{
+    padding: 0px;
+    object-fit: fill;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    height: auto;
+    max-height: 800px;
+    margin: 40px auto;
+
+}
+.thumbnail-garage{
+    transition: 0.2s;
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+    border: solid;
+}
+.thumbnail-garage:hover{
+    height: auto;
+    width: 520px;
+}
+
+h1{
+    color: whitesmoke;
+    text-decoration: underline;
+    text-align: center;
+}
