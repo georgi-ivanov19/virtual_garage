@@ -15,3 +15,17 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+$(function() {
+    // Add click event binding to `Save search` link
+    $("#save_search").on("click", function(event) {
+        event.preventDefault(); // don't trigger default
+
+        // get the value inside the text field
+        var name = $("#search_name").val();
+
+        $.post('/save_search', { search_name: name }, function(data) {
+            // log the result from the server, or whatever...
+            console.log(data);
+        });
+    });
+});

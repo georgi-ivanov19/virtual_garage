@@ -18,8 +18,8 @@
     = @car.description 
   %p.car-show{id: 'car-show-email'}
     %b Added by:
-    = @car.user.email
-    - if current_user.id = @car.user_id?
+    = @car.user.username
+    - if current_user.id == @car.user_id 
       = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
       = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }
 %br
@@ -30,5 +30,5 @@
   - @comments.each do |comment|
     -if comment.car_id == @car.id
       %p
-        ="#{comment.user.email} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
+        ="#{comment.user.username} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
      

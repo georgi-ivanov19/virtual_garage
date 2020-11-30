@@ -1,0 +1,39 @@
+/* line 1, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/garage.scss */
+body {
+  background-image: url(/assets/garage_door_bg-c82a3124af1acd3f290241a102be4115e8e7bf784c26cb8db3fcaa84c03826ab.jpg);
+  background-size: cover;
+}
+
+/* line 5, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/garage.scss */
+.col-12.garage {
+  padding: 0px;
+  object-fit: fill;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+  height: auto;
+  max-height: 800px;
+  margin: 40px auto;
+}
+
+/* line 16, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/garage.scss */
+.thumbnail-garage {
+  transition: 0.2s;
+  height: auto;
+  width: 500px;
+  margin: 0 auto;
+  border: solid;
+}
+
+/* line 23, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/garage.scss */
+.thumbnail-garage:hover {
+  height: auto;
+  width: 520px;
+}
+
+/* line 28, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/garage.scss */
+h1 {
+  color: whitesmoke;
+  text-decoration: underline;
+  text-align: center;
+}

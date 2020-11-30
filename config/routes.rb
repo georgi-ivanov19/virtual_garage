@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :cars
   root 'cars#index'
-  get 'mycars', to: 'cars#my_cars'
+  get '/search', to: 'cars#search'
+  get '/garage/:id', to: 'cars#garage', as: 'garage'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

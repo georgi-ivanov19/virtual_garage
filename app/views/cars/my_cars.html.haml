@@ -1,8 +1,0 @@
-= stylesheet_link_tag "my_cars"
-
-%body
-    %h1= "#{current_user.username}'s Garage"
-    - @cars.each do |car|
-        -if car.user_id == current_user.id
-            .col-12.garage
-                = link_to (image_tag car.image.url, class: 'img-responsive', class: 'thumbnail-garage' ), car

@@ -8,9 +8,21 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
   
-  def my_cars
+  def garage
     @cars = Car.all
+    if (User.find_by_username(params[:id]))
+      @username = params[:id];   
+    else
+      redirect_to root_path, :notice => 'User not found'
+    end
   end
+
+  def search
+    if params[:search].present?
+      redirect_to garage_path(params[:search]) 
+    end
+  end
+  
   # GET /cars/1
   # GET /cars/1.json
   def show
