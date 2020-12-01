@@ -5,11 +5,10 @@
     margin:30px;
     padding: 0px;
     object-fit: fill;
-    object-position: initial;
+    object-position: center;
     align-items: center;
     height: 300px;
-    width: 400px;
-    max-height: 600px;
+    width: 450px;
 }
 .index_link{
     margin-bottom: 20px;
@@ -19,24 +18,28 @@
         font-weight: bold;
     }
 }
-.show-img{
-    width: 620px;
+.img-wrapper{
     padding: 20px;
     float: left;
-    border-style: solid;
+    width: 480px;
+    height: auto;
+    #show-img{
+        width: 100%;
+    }
 }
-.car-show{
-    padding: 20px;
+.car-show-text{
+    padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    #car-show-email{
-        float: left;
-    }
 }
 .caption{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+}
+#description{
+    margin-right:150px;
+    float: right;
 }
 .link-button{
     text-align: center;
@@ -68,3 +71,14 @@
     }
 }
 
+.small-img{
+    float: left;
+    padding: 20px;
+    img{
+        margin-right: 5px;
+    }
+}
+.show-img-small{
+    width: 120px;
+    height: auto;
+}

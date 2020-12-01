@@ -25,9 +25,13 @@ class CarsController < ApplicationController
   
   # GET /cars/1
   # GET /cars/1.json
-  def show
+  def show 
     @comment = current_user.comments.new
     @comments = Comment.order("id DESC")
+    @images = @car.images
+    @counter = 0
+    @image = @images[@counter]
+    
   end
 
   # GET /cars/new
@@ -87,6 +91,6 @@ class CarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_params
-      params.require(:car).permit(:make, :model, :engine, :transmission, :description, :image)
+      params.require(:car).permit(:make, :model, :engine, :transmission, :description, images: [])
     end
 end

@@ -1,7 +1,7 @@
 %body
 - @cars.each do |car|
   .col-sm-12.col-md-6.col-lg-4
-    = link_to (image_tag car.image.url, class: 'img-responsive', class: 'thumbnail' ), car
+    = link_to (image_tag car.thumbnail(0), class: 'img-responsive', class: 'thumbnail' ), car
     .caption       
       %a{href: car_path(car), class: 'index_link'} #{car.make}, #{car.model}, #{car.engine}
 

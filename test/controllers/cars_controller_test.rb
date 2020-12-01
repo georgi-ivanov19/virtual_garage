@@ -2,7 +2,13 @@ require 'test_helper'
 
 class CarsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    get '/users/sign_in'
+    sign_in users(:user_001)
+    post user_session_url
     @car = cars(:one)
+
+    follow_redirect!
+    assert_response :success
   end
 
   test "should get index" do
