@@ -1,34 +1,39 @@
-%p#notice= notice
 %div.show_wrapper
-  = image_tag @car.image.url, class: 'img-responsive', :class => 'show-img'
-  %p.car-show
+  .img-wrapper
+    =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img'
+  %p.car-show-text{id: 'description'}
+    %b Description:
+    = @car.description   
+  %p.car-show-text
     %b Make:
     = @car.make
-  %p.car-show
+  %p.car-show-text
     %b Model:
     = @car.model
-  %p.car-show
+  %p.car-show-text
     %b Engine:
     = @car.engine
-  %p.car-show
+  %p.car-show-text
     %b Transmission:
     = @car.transmission
-  %p.car-show
-    %b Description:
-    = @car.description 
-  %p.car-show{id: 'car-show-email'}
+  %p.car-show-text{id: 'car-show-email'}
     %b Added by:
     = @car.user.username
     - if current_user.id == @car.user_id 
       = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
       = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }
-%br
-= render 'comments/form'
-%br
-%div.comment-section-wrapper
+  %br      
+  .small-img
+    -(0...@car.images.count).each do |image| 
+      =image_tag @car.thumbnail(image), class: 'img-responsive', :class => 'show-img-small'
+.comment-from-wrapper  
+  = render 'comments/form'
+.comment-section-wrapper
   %h2 Comments
-  - @comments.each do |comment|
-    -if comment.car_id == @car.id
-      %p
-        ="#{comment.user.username} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
-     
+  -if @comments.first.nil?
+    %p The comment section for this car is empty
+  -else  
+    - @comments.each do |comment|
+      -if comment.car_id == @car.id
+        %p
+          ="#{comment.user.username} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"

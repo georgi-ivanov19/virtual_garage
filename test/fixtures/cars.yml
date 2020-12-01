@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  make: MyString
-  model: MyString
-  engine: MyString
-  transmission: MyString
-  description: MyString
+  make: asd
+  model: asd
+  engine: asd
+  transmission: asd
+  description: sad
+  user_id: 1
+  image_file_name: drift.jpg
 
-two:
-  make: MyString
-  model: MyString
-  engine: MyString
-  transmission: MyString
-  description: MyString
+one:
+  make: das
+  model: das
+  engine: dasd
+  transmission: das
+  description: sda
+  user_id: 2
+  image_file_name: drift.jpg

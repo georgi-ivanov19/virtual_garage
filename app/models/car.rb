@@ -1,8 +1,15 @@
 class Car < ApplicationRecord
     belongs_to :user
     has_many :comments
+    has_many_attached :images
+    validates :make, :model, :description, :transmission, :engine,:user_id, presence: true
 
-    has_attached_file :image, styles: { medium: "300x200#" }, default_url: "/images/:style/missing.png"
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+   def thumbnail input
+    return self.images[input]
+   end
+#    def small_thumbnail input
+#     return self.images[input].variant(resize: '120x68!').processed
+#    end
+
      
 end

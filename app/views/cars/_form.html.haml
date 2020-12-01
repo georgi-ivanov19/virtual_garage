@@ -24,8 +24,8 @@
       = f.label :description
       = f.text_field :description
     .field.new-car-field
-      = f.label :image
-      = f.file_field :image
+      = f.label :images
+      = f.file_field :images, multiple: true
 
     .actions.button
       = f.submit 'Save'
