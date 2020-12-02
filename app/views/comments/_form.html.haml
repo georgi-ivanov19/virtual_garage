@@ -1,12 +1,14 @@
-%div.comment_wrapper
-  = form_with model: @comment, url: comments_path do |f|
-    - if @comment.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
-        %ul
-          - @comment.errors.full_messages.each do |message|
-            %li= message
+= form_with model: @comment, url: comments_path do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
 
-    = f.text_area :content, :placeholder => 'Enter a comment...', :class => 'form-control', :id => 'comment-field', :rows => '2', disabled: !user_signed_in?
-    = f.hidden_field :car_id, value: params[:id]
-    = f.submit 'Submit', class: 'btn', id: 'comment-submit-button', disabled: !user_signed_in?
+  -if user_signed_in?
+    = f.text_area :content, :placeholder => 'Enter a comment...', :id => 'comment-field', :class => 'form-control', :rows => '2'
+  -else
+    = f.text_area :content, :placeholder => 'You need to be signed in to enter a comment!', :id => 'comment-field', :class => 'form-control', :rows => '2', disabled: true  
+  = f.hidden_field :car_id, value: params[:id]
+  = f.submit 'Submit', class: 'btn', id: 'comment-submit-button', disabled: !user_signed_in?
