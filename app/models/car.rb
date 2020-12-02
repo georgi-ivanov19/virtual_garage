@@ -6,7 +6,7 @@ class Car < ApplicationRecord
     validate :image_type
 
    def thumbnail input
-    return self.images[input]
+    return self.images[input].variant(resize: '600x337.5!').processed
    end    
 
    private

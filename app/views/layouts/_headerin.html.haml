@@ -1,14 +1,10 @@
 %nav.navbar.navbar-inverse
   .container-fluid
     .navbar-header
-      %a.navbar-brand Virtual Garage
-    %ul.nav.navbar-nav
-      %li.active
-        %a{:href => root_path} Home
-      %li
-        %a{:href => "#"} Page 1
-      %li
-        %a{:href => "#"} Page 2
+      %div{:class => 'logo_area'}
+        %navbar-brand
+          %a{href: root_path}
+            %img{:src => '/assets/virtualgarage.png', :id => 'logo'}
     %ul.nav.navbar-nav.navbar-right
       %li
         %a{:href => new_user_registration_path}

@@ -1,8 +1,10 @@
 // Place all the styles related to the Cars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//index 
 .col-sm-12.col-md-6.col-lg-4{
-    margin:30px;
+    margin:20px;
     padding: 0px;
     object-fit: fill;
     object-position: center;
@@ -10,14 +12,16 @@
     height: 300px;
     width: 450px;
 }
-.index_link{
-    margin-bottom: 20px;
-}
 .col-sm-12.col-md-6.col-lg-4:hover{
     .caption{
         font-weight: bold;
     }
 }
+.index_link{
+    margin-bottom: 20px;
+}
+
+//show
 .car-show-text{
     padding: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -28,8 +32,10 @@
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
-#description{
-    margin-right:150px;
+.description-wrapper{
+    word-wrap: break-word;
+    width: 400px;
+    margin-right:50px;
     float: right;
 }
 .link-button{
@@ -50,16 +56,6 @@
 }
 .link-button:hover{
     background-color: fade-in($color: darkgrey, $amount: 1);;
-}
-.form_wrapper{
-    float: left;
-    padding-right: 20px;
-    background-color: #222;
-    position: fixed;
-    color: darkgray;
-     .button{
-        color: black;
-    }
 }
 .img-wrapper{
     padding: 20px;
@@ -89,7 +85,18 @@
         border-style: solid;
     }
 }
+
+//forms
 .comment-form-wrapper {
     margin-left: 20px;
-    width: 100%
+}
+
+.form_wrapper{
+    float: left;
+    background-color: #222;
+    position: fixed;
+    color: darkgray;
+     .button{
+        color: black;
+    }
 }
