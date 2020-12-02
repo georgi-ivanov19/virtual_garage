@@ -1,26 +1,27 @@
 %div.show_wrapper.container-fluid
   .img-wrapper
     -if @car.images.attached?
-      =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img'  
-  .description-wrapper
-    %p.car-show-text{id: 'description'}
-      %b Description:
-      = @car.description 
-  %p.car-show-text
-    %b Make:
-    = @car.make
-  %p.car-show-text
-    %b Model:
-    = @car.model
-  %p.car-show-text
-    %b Engine:
-    = @car.engine
-  %p.car-show-text
-    %b Transmission:
-    = @car.transmission
-  %p.car-show-text{id: 'car-show-email'}
-    %b Added by:
-    = @car.user.username
+      =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img' 
+  .text-wrapper     
+    .description-wrapper
+      %p.car-show-text{id: 'description'}
+        %b Description:
+        = @car.description 
+    %p.car-show-text
+      %b Make:
+      = @car.make
+    %p.car-show-text
+      %b Model:
+      = @car.model
+    %p.car-show-text
+      %b Engine:
+      = @car.engine
+    %p.car-show-text
+      %b Transmission:
+      = @car.transmission
+    %p.car-show-text{id: 'car-show-email'}
+      %b Added by:
+      = @car.user.username
   %br
   .small-img
     -if @car.images.attached?
