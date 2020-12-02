@@ -26,11 +26,10 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show 
-    @comment = current_user.comments.new
+    # @comment = current_user.comments.new
+    @comment = Comment.new   
     @comments = Comment.order("id DESC")
     @images = @car.images
-    @counter = 0
-    @image = @images[@counter]
     
   end
 

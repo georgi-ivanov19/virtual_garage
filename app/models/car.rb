@@ -16,7 +16,7 @@ class Car < ApplicationRecord
         end
         images.each do |image|
             if !image.content_type.in?(%('image/jpeg image/png'))
-                errors.add(:images, "can only have JPEG of PNG extensions")
+                errors.add(:images, "can only have JPEG or PNG extensions")
             end
         end
     end

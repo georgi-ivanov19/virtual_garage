@@ -21,13 +21,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
-  test "should create comment" do
-    assert_difference('Comment.count') do
-      post comments_url, params: { comment: { content: @comment.content } }
-    end
-
-    assert_redirected_to cars_url
-  end
 
   # test "should show comment" do
   #   get comment_url(@comment)
@@ -41,7 +34,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update comment" do
     patch comment_url(@comment), params: { comment: { content: @comment.content } }
-    assert_redirected_to comment_url(@comment)
+    assert_response :success
   end
 
   test "should destroy comment" do
