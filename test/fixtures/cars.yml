@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  make: asd
-  model: asd
-  engine: asd
-  transmission: asd
-  description: sad
+  id: 1
+  make: NISSAN
+  model: Silvia S13
+  engine: SR20DET
+  transmission: Manual
+  description: The perfect drift car
   user_id: 1
-  image_file_name: drift.jpg
 
 one:
-  make: das
-  model: das
-  engine: dasd
-  transmission: das
-  description: sda
-  user_id: 2
-  image_file_name: drift.jpg
+  id: 2
+  make: NISSAN
+  model: Silvia S15
+  engine: 2JZ-GTE
+  transmission: Sequential
+  description: The perfect drift car
+  user_id: 1

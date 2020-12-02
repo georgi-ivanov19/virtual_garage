@@ -1,6 +1,7 @@
-%div.show_wrapper
+%div.show_wrapper.container-fluid
   .img-wrapper
-    =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img'
+    -if @car.images.attached?
+      =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img'
   %p.car-show-text{id: 'description'}
     %b Description:
     = @car.description   
@@ -19,14 +20,16 @@
   %p.car-show-text{id: 'car-show-email'}
     %b Added by:
     = @car.user.username
-    - if current_user.id == @car.user_id 
-      = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
-      = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }
-  %br      
+  %br
   .small-img
-    -(0...@car.images.count).each do |image| 
-      =image_tag @car.thumbnail(image), class: 'img-responsive', :class => 'show-img-small'
-.comment-from-wrapper  
+    -if @car.images.attached?
+      -(0...@car.images.count).each do |image| 
+        =image_tag @car.thumbnail(image), class: 'img-responsive', class: 'show-img-small'    
+  - if user_signed_in? && current_user.id == @car.user_id 
+    .btns-wrapper
+      = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
+      = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }      
+.comment-form-wrapper  
   = render 'comments/form'
 .comment-section-wrapper
   %h2 Comments
