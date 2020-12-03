@@ -9,8 +9,8 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: <%= AKIARQYJDK3U2GZNLB3Y %>
-  secret_access_key: <%= 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 %>
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
   sudo apt-get install ntpregion: eu-west-2
   bucket: virtual-garage
 
