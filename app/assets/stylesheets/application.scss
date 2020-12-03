@@ -16,19 +16,22 @@
 
     @import 'bootstrap-sprockets';
     @import 'bootstrap';
+    $darkbg: #222;
+    $navtextcolor: #869298;
+    $brandcolor: #b4c731;
 
 html{
     height: 100%;
 }
-.footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.page-footer{
+    //position: fixed;
+    //left: 0;
+    //bottom: 0;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: gray;
-    background-color: #222;
+    color: $navtextcolor;
+    background-color: $darkbg;
 }
 body {
     background-image: asset_url("virtualgar-02-01.jpg");   
@@ -74,4 +77,36 @@ h1{
 
 .actions{
     padding-left: 30px;
+}
+.form_wrapper{
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    padding: 20px;
+    background-color: $darkbg;
+    color: $navtextcolor;
+}
+.form-content-wrapper{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+a{
+    color: $brandcolor;
+  
+    &:visited {
+      color: $brandcolor;
+    }
+  
+    &:hover {
+      color: $navtextcolor;
+      background-color: transparent;
+    }
+  }
+.actions{
+    color: black;
+}
+input{
+    color:black;
 }

@@ -28,7 +28,7 @@ class CarsController < ApplicationController
   def show 
     # @comment = current_user.comments.new
     @comment = Comment.new   
-    @comments = Comment.order("id DESC")
+    @comments = @car.comments
     @images = @car.images
     
   end
