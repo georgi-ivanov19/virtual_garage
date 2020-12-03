@@ -1,31 +1,33 @@
-%div.form_wrapper
-  %h1 New car
-  = form_for @car, html: { multipart: true } do |f|
-    - if @car.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@car.errors.count, "error")} prohibited this car from being saved:"
-        %ul
-          - @car.errors.full_messages.each do |message|
-            %li= message
+.form-content-wrapper
+  .form_wrapper
+    %h2 New car
+    = form_for @car, html: { multipart: true } do |f|
+      - if @car.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@car.errors.count, "error")} prohibited this car from being saved:"
+          %ul
+            - @car.errors.full_messages.each do |message|
+              %li= message
 
-    .field.new-car-field
-      = f.label :make
-      = f.text_field :make
-    .field.new-car-field
-      = f.label :model
-      = f.text_field :model
-    .field.new-car-field
-      = f.label :engine
-      = f.text_field :engine
-    .field.new-car-field
-      = f.label :transmission
-      = f.text_field :transmission
-    .field.new-car-field
-      = f.label :description
-      = f.text_field :description
-    .field.new-car-field
-      = f.label :images
-      = f.file_field :images, multiple: true
+      .field.new-car-field
+        = f.label :make
+        = f.text_field :make
+      .field.new-car-field
+        = f.label :model
+        = f.text_field :model
+      .field.new-car-field
+        = f.label :engine
+        = f.text_field :engine
+      .field.new-car-field
+        = f.label :transmission
+        = f.text_field :transmission
+      .field.new-car-field
+        = f.label :description
+        = f.text_field :description
+      .field.new-car-field
+        = f.label :images
+        = f.file_field :images, multiple: true
 
-    .actions.button
-      = f.submit 'Save'
+      .actions.button
+        = f.submit 'Save'
+      = link_to 'Back', cars_path, class: 'form-link'

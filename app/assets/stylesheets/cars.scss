@@ -19,13 +19,23 @@
 }
 .index_link{
     margin-bottom: 20px;
+    color: black;
+  
+    &:visited {
+      color: black;
+    }
+  
+    &:hover {
+      color: black;
+      background-color: transparent;
+    }
 }
 
 //show
 .text-wrapper{
     padding-bottom: 50px;
     padding-left: 50px;
-    background: #ECE4E4;
+    background: #F0E4E5;
     width: 100%;
 }
 .car-show-text{
@@ -53,7 +63,6 @@
     font: bold 16px Arial;
     text-decoration: none;
     background-color: #EEEEEE;
-    color: #333333;
     border-top: 1px solid #CCCCCC;
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
@@ -98,12 +107,3 @@
     margin-left: 20px;
 }
 
-.form_wrapper{
-    float: left;
-    background-color: #222;
-    position: fixed;
-    color: darkgray;
-     .button{
-        color: black;
-    }
-}
