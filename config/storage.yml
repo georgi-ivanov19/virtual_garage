@@ -11,8 +11,8 @@ amazon:
   service: S3
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  sudo apt-get install ntpregion: eu-west-2
-  bucket: virtual-garage
+  sudo apt-get install ntpregion: <%= ENV['AWS_DEFAULT_REGION'] %>
+  bucket: <%= ENV['AWS_BUCKET_NAME'] %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
