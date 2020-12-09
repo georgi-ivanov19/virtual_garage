@@ -15,6 +15,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get cars_url
     assert_response :success
+    assert_select 'title', 'Virtual Garage'
   end
 
   test "should get new" do

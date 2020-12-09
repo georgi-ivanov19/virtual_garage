@@ -50,9 +50,6 @@ ul{
     }   
 }
 
-h1{
-    padding-left: 30px;
-}
 #search_field{
     width: 250px;
 }
@@ -61,20 +58,25 @@ h1{
     width: 100%;
     padding: 3px;
 }
+
 .content-wrapper{
     margin-bottom: 20px;
     padding: 0px;
 }
+
 #login{
     padding-left: 30px;
 }
+
 .new-car-field{
     padding-left: 20px;
 }
 
+//forms
 .actions{
     padding-left: 30px;
 }
+
 .form_wrapper{
     display: inline-block;
     margin: auto;
@@ -83,6 +85,7 @@ h1{
     background-color: $darkbg;
     color: $navtextcolor;
 }
+
 .form-content-wrapper{
     width: 100%;
     display: block;
@@ -101,9 +104,26 @@ a{
       background-color: transparent;
     }
   }
+
 .actions{
     color: black;
 }
+
 input{
     color:black;
+}
+//footer
+footer{
+    .footer-link{
+        font-size: medium;
+    }
+    .text-left{
+        float: left;  
+        padding-left: 50px;
+    }
+    .text-right{
+        float: right;
+        padding-right: 50px;
+    }
+    
 }
