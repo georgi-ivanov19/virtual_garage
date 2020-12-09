@@ -42,3 +42,5 @@
       -if comment.car_id == @car.id
         %p
           ="#{comment.user.username} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
+          -if user_signed_in? && comment.user_id == current_user.id
+            = link_to 'Edit', edit_comment_path(comment)

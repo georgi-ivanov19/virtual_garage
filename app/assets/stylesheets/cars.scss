@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+    $bgcolor: #F0E4E5;
 //index 
 .col-sm-12.col-md-6.col-lg-4{
     margin:20px;
@@ -35,7 +36,7 @@
 .text-wrapper{
     padding-bottom: 50px;
     padding-left: 50px;
-    background: #F0E4E5;
+    background: $bgcolor;
     width: 100%;
 }
 .car-show-text{
