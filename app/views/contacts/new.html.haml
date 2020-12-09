@@ -1,21 +1,27 @@
-%h1 Contact Virtual Garage
 
-= form_for @contact do |f|
-    =f.label :name
-    =f.text_field :name, required: true 
+.form-content-wrapper
+    .form_wrapper
+        %h2 Contact Virtual Garage
+        = form_for @contact do |f|
+            =f.label :name
+            %br
+            =f.text_field :name, required: true, id: 'contact-name'
 
-    %br
+            %br
 
-    =f.label :email
-    =f.email_field :email, required: true
+            =f.label :email
+            %br
+            =f.email_field :email, required: true,id: 'contact-email'
   
-    %br
+            %br
 
-    =f.label :message
-    =f.text_area :message, required: true, as: :text
+            =f.label :message
+            %br
+            =f.text_area :message, required: true, as: :text, id: 'contact-message'
 
-    .hidden
-        =f.label :hidden
-        =f.text_field :hidden, hint: 'leave this empty'
+            .hidden
+                =f.label :hidden
+                =f.text_field :hidden, hint: 'leave this empty'
+            %br    
 
-    = f.submit 'Submit', class: 'button'
+            = f.submit 'Submit', class: 'button'

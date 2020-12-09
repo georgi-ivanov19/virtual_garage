@@ -1,7 +1,7 @@
 class Contact < MailForm::Base
     attribute :name, validate: true
     attribute :email, validate: /\A[^@\s]+@[^@\s]+\z/i
-    attribute :message
+    attribute :message, validate: true
     attribute :hidden, captcha: true
 
   # Declare the e-mail headers. It accepts anything the mail method
