@@ -21,11 +21,89 @@
 function ValidateCarForm(){
      $('#car_form').validate({
           rules: {
-               'car[make]': {required: true}
-          },
+               'car[make]': {required: true},
+               'car[model]': {required: true},
+               'car[engine]': {required: true},
+               'car[transmission]': {required: true},
+               'car[description]': {required: true}
 
+               //for some reason this does not work
+               //'car[images]': {required: true, accept: "image/jpeg, image/png"}
+          },
           messages: {
-               'car[make]': {required: 'You must enter the brand of your car'}
+               'car[make]': {required: 'You must provide the brand of your car'},
+               'car[model]': {required: 'You must provide the model of your car'},
+               'car[engine]': {required: 'You must provide the engine of your car'},
+               'car[transmission]': {required: 'You must provide the type of transmission your car uses'},
+               'car[description]': {required: 'Please provide a description of your car'}
+
+               //for some reason this does not work
+               //'car[images]': {required: 'You must upload at least one picture of your car (jpg/png)'}
+          },
+          errorElement : 'div'
+     });
+}
+
+function ValidateNewUserForm(){
+     $('#new_user_form').validate({
+          rules: {
+               'user[username]': {required: true},
+               'user[email]': {required: true, email: true},
+               'user[password]': {required: true, minlength: 6},
+               'user[password_confirmation]': {required: true}
+          },
+          messages: {
+               'user[username]': {required: 'Please provide your username'},
+               'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
+               'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
+               'user[password_confirmation]': {required:'Please confirm your password'}
+          },
+          errorElement : 'div'
+     });
+}
+
+function ValidateLoginForm(){
+     $('#login_form').validate({
+          rules: {              
+               'user[email]': {required: true, email: true},
+               'user[password]': {required: true, minlength: 6},
+          },
+          messages: {              
+               'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
+               'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
+          },
+          errorElement : 'div'
+     });
+}
+
+function ValidateEditUserForm(){
+     $('#edit_user_form').validate({
+          rules: {
+               'user[email]': {required: true, email: true},
+               'user[password]': {required: true, minlength: 6},
+               'user[password_confirmation]': {required: true},
+               'user[current_password]': {required: true}
+          },
+          messages: {
+               'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
+               'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
+               'user[password_confirmation]': {required:'Please confirm your password'},
+               'user[current_password]': {required:'Please provide your current password'}
+          },
+          errorElement : 'div'
+     });
+}
+function ValidateContactForm(){
+     $('#contact_form').validate({
+          rules: {
+               'contact[name]': {required: true},
+               'contact[email]': {required: true, email: true},
+               'contact[message]': {required: true}
+          },
+          messages: {
+               'contact[name]': {required: 'Please provide your name'},
+               'contact[email]': {required: 'Please provide your email', email: 'Please provide a valid email address'},
+               'contact[message]': {required: 'Please provide your message to us'}
           },
           errorElement : 'div'
      });
@@ -41,5 +119,20 @@ document.addEventListener("turbolinks:load", function() {
 
     if(document.getElementById('car_form')){
           ValidateCarForm();
+     }
+
+     if(document.getElementById('new_user_form')){
+          ValidateNewUserForm();
+     }
+
+     if(document.getElementById('login_form')){
+          ValidateLoginForm();
+     }
+
+     if(document.getElementById('edit_user_form')){
+          ValidateEditUserForm();
+     }
+     if(document.getElementById('contact_form')){
+          ValidateContactForm();
      }
   });
