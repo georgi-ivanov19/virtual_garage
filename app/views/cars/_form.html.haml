@@ -1,6 +1,11 @@
 .form-content-wrapper
   .form_wrapper
-    %h2 New car
+    -if action_name == 'edit'
+      %h2 Edit your #{@car.make} #{@car.model}
+      %h6 DISCLAIMER! your old car photos will be replaced with the new ones
+    -else
+      %h2 New car
+  
     = form_for @car, html: {id: 'car_form', multipart: true } do |f|
       - if @car.errors.any?
         #error_explanation
@@ -31,7 +36,7 @@
         = f.text_field :description
       .field.new-car-field
         = f.label :images
-        = f.file_field :images, multiple: true
+        = f.file_field :images, multiple: true, required: true
 
       .actions.button
         = f.submit 'Save'

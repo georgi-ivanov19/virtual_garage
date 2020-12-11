@@ -26,9 +26,6 @@ function ValidateCarForm(){
                'car[engine]': {required: true},
                'car[transmission]': {required: true},
                'car[description]': {required: true}
-
-               //for some reason this does not work
-               //'car[images]': {required: true, accept: "image/jpeg, image/png"}
           },
           messages: {
                'car[make]': {required: 'You must provide the brand of your car'},
@@ -36,9 +33,6 @@ function ValidateCarForm(){
                'car[engine]': {required: 'You must provide the engine of your car'},
                'car[transmission]': {required: 'You must provide the type of transmission your car uses'},
                'car[description]': {required: 'Please provide a description of your car'}
-
-               //for some reason this does not work
-               //'car[images]': {required: 'You must upload at least one picture of your car (jpg/png)'}
           },
           errorElement : 'div'
      });
