@@ -10,6 +10,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     @user = users(:user_001)
     follow_redirect!
     assert_response :success
+    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
+    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
   end
 
   test "should get index" do
@@ -32,8 +34,6 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create car" do
-    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
-    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
     assert_difference('Car.count') do
       post cars_url, params: { car: { description: @car.description, engine: @car.engine, make: @car.make, model: @car.model, transmission: @car.transmission, user_id: @user.id, images: [@image1, @image2]}}
     end

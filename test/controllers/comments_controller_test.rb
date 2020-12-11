@@ -27,15 +27,15 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
-  test "should get edit" do
-    get edit_comment_url(@comment)
-    assert_response :success
-  end
+  # test "should get edit" do
+  #   get edit_comment_url(@comment)
+  #   assert_response :success
+  # end
 
-  test "should update comment" do
-    patch comment_url(@comment), params: { comment: { content: @comment.content } }
-    assert_response :success
-  end
+  # test "should update comment" do
+  #   patch comment_url(@comment), params: { comment: { content: @comment.content } }
+  #   assert_response :success
+  # end
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do

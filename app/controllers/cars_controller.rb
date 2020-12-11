@@ -30,7 +30,6 @@ class CarsController < ApplicationController
     @comment = Comment.new   
     @comments = @car.comments
     @images = @car.images
-    
   end
 
   # GET /cars/new
