@@ -35,7 +35,7 @@ class CarTest < ActionDispatch::IntegrationTest
   end
 
   test "should_not_save_invalid_car" do
-    #building a car with invalid parameters (no model, no images)
+    #building a car with invalid parameters
     @car_no_make = @user.cars.build(model: 'Silvia S13', engine: 'SR20DET', transmission: 'Manual', description: 'The perfect drift car', images: [@image1, @image2, @image3, @image4])
     @car_no_model = @user.cars.build(make: 'Nissan', engine: 'SR20DET', transmission: 'Manual', description: 'The perfect drift car', images: [@image1, @image2, @image3, @image4])
     @car_no_engine = @user.cars.build(make: 'Nissan', model: 'Silvia S13', transmission: 'Manual', description: 'The perfect drift car', images: [@image1, @image2, @image3, @image4])

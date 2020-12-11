@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
+  content: First fixture
+  user_id: 1
+  car_id: 1
 
 two:
-  content: MyText2
+  content: Second fixture
+  user_id: 2
+  car_id: 1

@@ -64,4 +64,11 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to cars_url
   end
+
+  test "should destroy car when user is destroyed" do
+    assert_difference('Car.count', -@user.cars.count) do
+      @user.destroy 
+    end
+  end
+  
 end
