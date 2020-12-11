@@ -1,7 +1,7 @@
 class Car < ApplicationRecord
     belongs_to :user
     has_many :comments, dependent: :destroy
-    has_many_attached :images
+    has_many_attached :images, dependent: :destroy
     validates :make, :model, :description, :transmission, :engine,:user_id, presence: true
     validate :image_type
 
