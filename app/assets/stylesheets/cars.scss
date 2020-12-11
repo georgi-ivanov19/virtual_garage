@@ -38,6 +38,9 @@
     padding-left: 50px;
     background: $bgcolor;
     width: 100%;
+    .description-wrapper{
+        background: $bgcolor;
+    }
 }
 .car-show-text{
     padding: 15px;
