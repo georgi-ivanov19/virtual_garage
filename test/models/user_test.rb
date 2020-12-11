@@ -96,5 +96,4 @@ class UserTest < ActionDispatch::IntegrationTest
     assert @valid_user.comments.count == 1
 
   end
-
 end

@@ -12,15 +12,34 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require jquery.validate
 //= require activestorage
 //= require turbolinks
 // = require_tree .
 //= require bootstrap-sprockets
 
+function ValidateCarForm(){
+     $('#car_form').validate({
+          rules: {
+               'car[make]': {required: true}
+          },
+
+          messages: {
+               'car[make]': {required: 'You must enter the brand of your car'}
+          },
+          errorElement : 'div'
+     });
+}
+
+// using this because the document.ready function would only work when the current page was refreshed
 document.addEventListener("turbolinks:load", function() {
     var carShowImage = document.getElementById("show-img")
     var carShowSmallImages = document.getElementsByClassName('show-img-small')
     $(carShowSmallImages).click(function(){
          carShowImage.src = this.src
     })
+
+    if(document.getElementById('car_form')){
+          ValidateCarForm();
+     }
   });
