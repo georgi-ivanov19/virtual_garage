@@ -73,3 +73,4 @@ gem 'paperclip', '~> 4.2.0'
 gem 'aws-sdk-s3', require: false
 gem 'figaro'
 gem 'mail_form'
+gem 'jquery-validation-rails'
