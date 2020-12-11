@@ -71,5 +71,7 @@ Rails.application.configure do
     :password             => ENV['gmail_password'],
     :authentication       => "plain",
     :enable_starttls_auto => true
-  } 
+  }
+  
+  config.active_storage.replace_on_assign_to_many = true
 end
