@@ -20,7 +20,6 @@ class CommentTest < ActionDispatch::IntegrationTest
 
   test "shouldn't save invalid comment" do
     @comment_no_content = @user.comments.build(content: "", car_id: @car.id)
-    
     assert_not @comment_no_content.valid?
   end
 
