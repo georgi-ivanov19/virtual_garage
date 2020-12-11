@@ -38,8 +38,12 @@
     padding-left: 50px;
     background: $bgcolor;
     width: 100%;
-    .description-wrapper{
+    #description{
         background: $bgcolor;
+        word-wrap: break-word;
+        width: 400px;
+        margin-right: 5%;
+        float: right;
     }
 }
 .car-show-text{
@@ -51,12 +55,6 @@
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-}
-.description-wrapper{
-    word-wrap: break-word;
-    width: 400px;
-    margin-right:50px;
-    float: right;
 }
 .link-button{
     text-align: center;
