@@ -86,4 +86,17 @@ en:
   errors:
     unsuccessful_comment: 'Could not save your comment.'
     unsuccessful_car: 'Could not save your car'
-
+  cars:
+    FAQs:
+      page_title: 'Virtual Garage FAQs'
+      question1: 'What is Virtual Garage?'
+      answer1: 'Virtual Garage is a place for car enthusiasts to browse through their favorite vehicles. Why not even add their own one to the website? Virtual Garage is a collection of user-added cars, modified or not, that make their owners proud.'
+      question2: 'How do I add a car?'
+      answer2_html: |
+        All you have to do to add your ride to Virtual Garage, is to have a registration and some pictures of your car. Once signed in click add a car form the navigation bar and enter the details of your ride.<br>
+        If you have not already signed up, you can do it from
+      answer2_link: 'here'
+      question3: 'What is the optimal photo resolution?'
+      answer3_html: 'For the best Virtual Garage experience and to prevent your photos from deforming, you should use <b>1920x1080</b> pictures, or pictures with an aspect ratio of <b>16:9</b>'
+      question4: 'How do I contact Virtual Garage?'
+      answer4_html: 'Feel free to email us at <b>virtualgaragee1@gmail.com</b>, or by filling out the contact form, the link yo which can be found at the bottom right of the webpage.'
