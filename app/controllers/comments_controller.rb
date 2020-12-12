@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_back fallback_location:'/', notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+        format.json {render @car, status: :created, location: @car}
       else
-        format.html { redirect_back fallback_location:'/', notice: 'Unable to create comment' }
+        format.html { redirect_to @car, notice: 'Unable to create comment' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -35,6 +35,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content, :car_id)
+      params.require(:comment).permit(:content, :car_id, :user_id)
     end
 end
