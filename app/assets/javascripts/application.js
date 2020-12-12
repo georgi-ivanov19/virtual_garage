@@ -41,14 +41,14 @@ function ValidateCarForm(){
 function ValidateNewUserForm(){
      $('#new_user_form').validate({
           rules: {
-               'user[username]': {required: true},
-               'user[email]': {required: true, email: true},
+               'user[username]': {required: true, remote: '/check_username'},
+               'user[email]': {required: true, email: true, remote: '/check_email'},
                'user[password]': {required: true, minlength: 6},
                'user[password_confirmation]': {required: true}
           },
           messages: {
-               'user[username]': {required: 'Please provide your username'},
-               'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
+               'user[username]': {required: 'Please provide your username', remote: 'Username is already taken'},
+               'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address', remote: 'Email is already taken'},
                'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
                'user[password_confirmation]': {required:'Please confirm your password'}
           },
@@ -102,6 +102,18 @@ function ValidateContactForm(){
           errorElement : 'div'
      });
 }
+function ValidateCommentForm(){
+     $('#comment_form').validate({
+          rules: {              
+               'comment[content]': {required: true},
+               
+          },
+          messages: {              
+               'comment[content]': {required: 'Comment cannot be empty'},
+          },
+          errorElement : 'div'
+     });
+}
 
 // using this because the document.ready function would only work when the current page was refreshed
 document.addEventListener("turbolinks:load", function() {
@@ -126,7 +138,12 @@ document.addEventListener("turbolinks:load", function() {
      if(document.getElementById('edit_user_form')){
           ValidateEditUserForm();
      }
+
      if(document.getElementById('contact_form')){
           ValidateContactForm();
+     }
+
+     if(document.getElementById('comment_form')){
+          ValidateCommentForm();
      }
   });
