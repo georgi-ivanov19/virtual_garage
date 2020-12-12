@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, :username, presence: true, uniqueness: true
   after_create :notify_user
   
+  #send an email upon sign up
   def notify_user
     UserMailer.notify_user(self).deliver
   end

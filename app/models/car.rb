@@ -9,6 +9,7 @@ class Car < ApplicationRecord
     return self.images[input].variant(resize: '600x337.5!').processed
    end    
 
+   #validate that there are images attached and they are in either jpeg or png format
    private
    def image_type
     if images.attached? == false

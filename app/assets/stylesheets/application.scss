@@ -85,7 +85,9 @@ ul{
     background-color: $darkbg;
     color: $navtextcolor;
 }
-
+.error{
+    color: red
+}
 .form-content-wrapper{
     width: 100%;
     display: block;
@@ -130,7 +132,4 @@ footer{
         padding-right: 16%;
     }
     
-}
-.error{
-    color: red
 }
