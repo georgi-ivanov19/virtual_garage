@@ -21,23 +21,23 @@ class UserTest < ActionDispatch::IntegrationTest
   # #building a comment with valid parameters
   # @car = @user.cars.build(make: 'Nissan', model: 'Silvia S13', engine: 'SR20DET', transmission: 'Manual', description: 'The perfect drift car', images: [@image1, @image2, @image3, @image4])
 
-  test "should save valid user" do 
+  test "should save valid user" do
     @valid_user = User.new
     @valid_user.username = 'test_user'
     @valid_user.email = 'test@example.com'
     @valid_user.password = 'testing'
 
-    @valid_user.save 
-    assert @valid_user.valid? 
+    @valid_user.save
+    assert @valid_user.valid?
   end
 
-  test "shouldn't save invalid user" do 
+  test "shouldn't save invalid user" do
+    #creating all the possible invalid users and checking that they do not save
     @valid_user = User.new
     @valid_user.username = 'test_user'
     @valid_user.email = 'test@example.com'
     @valid_user.password = 'testing'
     @valid_user.save
-
 
     @user_no_username = User.new
     @user_no_username.username = ''
@@ -69,15 +69,15 @@ class UserTest < ActionDispatch::IntegrationTest
     @user_taken_username.email = 'validemail@example.com'
     @user_taken_username.password = 'asdasd'
 
-    assert_not @user_no_username.valid? 
+    assert_not @user_no_username.valid?
     assert_not @user_no_email.valid?
-    assert_not @user_invalid_email.valid? 
-    assert_not @user_no_password.valid? 
-    assert_not @user_taken_email.valid? 
-    assert_not @user_taken_username.valid? 
+    assert_not @user_invalid_email.valid?
+    assert_not @user_no_password.valid?
+    assert_not @user_taken_email.valid?
+    assert_not @user_taken_username.valid?
   end
 
-  test "should assign car and comment to user" do  
+  test "should assign car and comment to user" do
     @valid_user = User.new
     @valid_user.username = 'test_user'
     @valid_user.email = 'test@example.com'
@@ -88,7 +88,7 @@ class UserTest < ActionDispatch::IntegrationTest
     @car = @valid_user.cars.build(make: 'Nissan', model: 'Silvia S13', engine: 'SR20DET', transmission: 'Manual', description: 'The perfect drift car', images: [@image1, @image2, @image3, @image4])
     @car.save
 
-    #building a comment with valid parameters   
+    #building a comment with valid parameters
     @comment = @valid_user.comments.build(content: "Test Comment", car_id: @car.id)
     @comment.save
 
