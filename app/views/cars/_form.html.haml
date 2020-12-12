@@ -1,5 +1,6 @@
 .form-content-wrapper
   .form_wrapper
+    -# change the title of the form based on the action (edit/new)
     -if action_name == 'edit'
       %h2 Edit your #{@car.make} #{@car.model}
       %h6 DISCLAIMER! your old car photos will be replaced with the new ones
@@ -40,4 +41,8 @@
 
       .actions.button
         = f.submit 'Save'
+        /# diplay the show link if in edit action
+      -if action_name == 'edit'
+        = link_to 'Show', @car, class: 'form-link'
+        \|
       = link_to 'Back', cars_path, class: 'form-link'
