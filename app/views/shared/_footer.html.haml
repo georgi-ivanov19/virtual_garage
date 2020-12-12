@@ -1,0 +1,8 @@
+%footer{class: 'page-footer navbar-fixed-bottom'}
+    .text-left{id: 'faqs'}
+        = link_to(t('.faqs'), faqs_path, class: 'footer-link', id: 'faqs')
+    .text-right{id: 'contact'}
+        = link_to(t('.contact'), new_contact_path, class: 'footer-link', id: 'contact')
+    .footer-copyright.text-center
+        !="&copy; Virtual Garage #{Time.now.year}"
+
