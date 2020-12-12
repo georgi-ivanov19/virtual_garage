@@ -7,8 +7,8 @@
           %li= message
 
   -if user_signed_in?
-    = f.text_area :content, :placeholder => 'Enter a comment...', :id => 'comment-field', :class => 'form-control', :rows => '2'
+    = f.text_area :contentin, placeholder: true, id: 'comment-field', class: 'form-control', rows:'2'
   -else
-    = f.text_area :content, :placeholder => 'You need to be signed in to enter a comment!', :id => 'comment-field', :class => 'form-control', :rows => '2', disabled: true  
+    = f.text_area :contentout, placeholder: true, id: 'comment-field', class: 'form-control', rows: '2', disabled: true
   = f.hidden_field :car_id, value: params[:id]
   = f.submit 'Submit', class: 'btn',remote: true, id: 'comment-submit-button', disabled: !user_signed_in?

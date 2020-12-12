@@ -30,4 +30,60 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: 'Virtual Garage'
+  app_title: 'Virtual Garage'
+  helpers:
+    placeholder:
+      comment:
+        contentin: 'Enter a comment...'
+        contentout: 'You need to be signed in to enter a comment!'
+      # search-form:
+        #   search: 'Search for a user's garage...' TODO
+      contact: #contact form labels
+        name: 'Your Name'
+        email: 'Your Email'
+        message: 'Message'
+  activerecord: #all the user attributes that match form labels
+    attributes:
+      user:
+        email: 'Email'
+        username: 'Username'
+        password: 'Password'
+        password_confirmation: 'Confirm Password'
+        remember_me: 'Remember me'
+      car: #all the car attributes that match form labels
+        make: 'Brand'
+        model: 'Model'
+        engine: 'Engine'
+        transmission: 'Transmission'
+        description: 'Description'
+        images: 'Images'
+      comment:
+        content: 'Content'
+  shared:
+    headerout:
+      garage: 'My Garage'
+      add_car: 'Add a car'
+      edit_account: 'Edit Account'
+      sign_out: 'Sign out'
+    headerin:
+      sign_in: 'Sign in'
+      sign_up: 'Sign up'
+    footer:
+      faqs: 'FAQs'
+      contact: 'Contact us'
+  comments:
+    form:
+      enter_comment: 'Enter a comment...'
+      sign_in_to_comment: 'You need to be signed in to enter a comment!'
+  comment_section:
+    comments: 'Comments'
+    empty_section: 'The comment section for this car is empty'
+  confirmations:
+    successful_comment: 'Your comment was added successfully'
+    successful_car: 'Your car was added successfully'
+    successful_car_edit: 'Your car was successfully updated'
+    successful_car_destroy: 'Your car was successfully destroyed'
+  errors:
+    unsuccessful_comment: 'Could not save your comment.'
+    unsuccessful_car: 'Could not save your car'
+

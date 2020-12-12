@@ -33,9 +33,9 @@
 .comment-form-wrapper  
   = render 'comments/form'
 .comment-section-wrapper
-  %h2 Comments
+  %h2=t('comment_section.comments')
   -if @comments.first.nil?
-    %p The comment section for this car is empty
+    %p=t('comment_section.empty_section')
   -else  
     - @comments.each do |comment|
       -if comment.car_id == @car.id

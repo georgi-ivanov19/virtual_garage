@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_back fallback_location:'/', notice: 'Comment was successfully created.' }
+        format.html { redirect_back fallback_location:'/', notice: t('confirmations.successful_comment') }
         format.json {render @car, status: :created, location: @car}
       else
-        format.html { redirect_to @car, notice: 'Unable to create comment' }
+        format.html { redirect_to @car, notice: t('errors.unsuccessful_comment') }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
