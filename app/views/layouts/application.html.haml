@@ -11,10 +11,10 @@
     - flash.each do |name, msg|
       = content_tag(:div, msg, class: "alert alert-info")
     - if user_signed_in?
-      = render 'layouts/headerout'
+      = render 'shared/headerout'
     - else
-      = render 'layouts/headerin'
+      = render 'shared/headerin'
     .content-wrapper.container-fluid
       = yield
     %footer
-      = render 'layouts/footer'
+      = render 'shared/footer'
