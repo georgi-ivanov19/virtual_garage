@@ -6,7 +6,7 @@
       %h6 DISCLAIMER! your old car photos will be replaced with the new ones
     -else
       %h2 New car
-  
+
     = form_for @car, html: {id: 'car_form', multipart: true } do |f|
       - if @car.errors.any?
         #error_explanation
@@ -22,7 +22,7 @@
       .field.new-car-field
         = f.label :model
         %br
-        = f.text_field :model   
+        = f.text_field :model
       .field.new-car-field
         = f.label :engine
         %br
