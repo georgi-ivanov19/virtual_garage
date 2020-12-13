@@ -30,16 +30,33 @@ $bgcolor: #F0E4E5;
 td.top{
     text-align: center;
 }
-p.email{
+.email{
   margin-top: 20px;
   font-size: 20px;
+  padding-left: 20px;
 }
-span.email{
-    margin-top: 20px;
-    font-size: 20px;
-}
+
 .mail-footer{
-    text-align: center;
+    #faqs{
+        padding-top: 15px;
+        font-size: 20px;
+        width: 33.33%;
+        float: left;
+    }
+    #contact{
+        margin-top: 15px;
+        font-size: 20px;
+        width: 33.33%;
+        float: right;
+    }
+    #vg2020{
+        display: inline-block;
+        margin-top: 30px;
+        font-size: 20px;
+        width: 33.33%;
+    }
+    width: 100%;
+    height: 80px;
     background-color: $bgcolor;
 }
 #logo{

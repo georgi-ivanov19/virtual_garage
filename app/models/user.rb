@@ -10,9 +10,14 @@ class User < ApplicationRecord
   validates_length_of :username, minimum: 3, maximum: 20
   validates :encrypted_password, presence: true
   after_create :notify_user
+  after_update :user_edited
 
   #send an email upon sign up
   def notify_user
     UserMailer.notify_user(self).deliver
+  end
+
+  def user_edited
+    UserMailer.user_edited(self).deliver
   end
 end

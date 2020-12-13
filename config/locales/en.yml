@@ -39,6 +39,14 @@ en:
       go: 'Go ahead!'
       unready: "If you do not feel ready yet, feel free to browse through our collection of cars. From Japan to Germany, modified or not, there is a car for every style"
       thanks: 'Thank you for your registration. We hope you enjoy your time at Virtual Garage'
+    user_edited:
+      hello: 'Hello '
+      beginning: 'We are getting in touch with you to let you know that your Virtual Garage account has been updated.'
+      review: 'You can log in from '
+      here: 'here'
+      review2: 'to review the changes that have been made.'
+      review_text: 'You can log in to review the changes that have been made.'
+      signature: '-The Virtual Garage team'
   title: 'Virtual Garage' #app title
   helpers: #submit button text for the corresponding action
     submit:

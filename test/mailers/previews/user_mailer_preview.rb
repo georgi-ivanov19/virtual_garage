@@ -3,4 +3,8 @@ class UserMailerPreview < ActionMailer::Preview
     def notify_user
         UserMailer.notify_user(User.first)
     end
+
+    def user_edited
+        UserMailer.user_edited(User.first)
+    end
 end

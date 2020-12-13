@@ -1,0 +1,9 @@
+%footer{class: 'page-footer navbar-fixed-bottom'}
+    %span{id: 'faqs'}
+        = link_to(t('.faqs'), faqs_url, class: 'footer-link', id: 'faqs')
+    %span{id: 'vg2020'}
+        &copy; Virtual Garage #{Time.now.year}
+    %span{id: 'contact'}
+        = link_to(t('.contact'), new_contact_url, class: 'footer-link', id: 'contact')
+
+

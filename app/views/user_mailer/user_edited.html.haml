@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %table.email-table
+      %tbody
+        %tr.header-row
+
+          %td.top
+            %img{:src => asset_url("virtualgarage.png"), :id => 'logo'}
+            .title{id: 'email-title'}=t('.hello') + "#{@user.username},"
+        %tr.body-row
+          %td
+            %p.email= t('.beginning')
+            %br
+            %br
+            %span.email= t('.review')
+            = link_to(t('.here'), new_user_session_url)
+            %span.email= t('.review2')
+            %p.email{id: 'signature'}= t('.signature')
+    .mail-footer
+      = render 'shared/email_footer'
+
+
+
+
