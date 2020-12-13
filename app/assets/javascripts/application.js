@@ -41,16 +41,16 @@ function ValidateCarForm(){
 function ValidateNewUserForm(){
      $('#new_user_form').validate({
           rules: {
-               'user[username]': {required: true, remote: '/check_username'},
+               'user[username]': {required: true, remote: '/check_username', minlength: 3, maxlength: 20},
                'user[email]': {required: true, email: true, remote: '/check_email'},
                'user[password]': {required: true, minlength: 6},
-               'user[password_confirmation]': {required: true}
+               'user[password_confirmation]': {required: true, equalTo: user_password}
           },
           messages: {
-               'user[username]': {required: 'Please provide your username', remote: 'Username is already taken'},
+               'user[username]': {required: 'Please provide your username', remote: 'Username is already taken', minlength: 'Username must be longer than 3 characters', maxlength: 'Username cannot be longer than 20 characters'},
                'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address', remote: 'Email is already taken'},
                'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
-               'user[password_confirmation]': {required:'Please confirm your password'}
+               'user[password_confirmation]': {required:'Please confirm your password', equalTo: 'Password confirmation does not match'}
           },
           errorElement : 'div'
      });
@@ -58,11 +58,11 @@ function ValidateNewUserForm(){
 
 function ValidateLoginForm(){
      $('#login_form').validate({
-          rules: {              
+          rules: {
                'user[email]': {required: true, email: true},
                'user[password]': {required: true, minlength: 6},
           },
-          messages: {              
+          messages: {
                'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
                'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
           },
@@ -104,11 +104,11 @@ function ValidateContactForm(){
 }
 function ValidateCommentForm(){
      $('#comment_form').validate({
-          rules: {              
+          rules: {
                'comment[content]': {required: true},
-               
+
           },
-          messages: {              
+          messages: {
                'comment[content]': {required: 'Comment cannot be empty'},
           },
           errorElement : 'div'
