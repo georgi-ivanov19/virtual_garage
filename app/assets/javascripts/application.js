@@ -21,17 +21,17 @@
 function ValidateCarForm(){
      $('#car_form').validate({
           rules: {
-               'car[make]': {required: true},
-               'car[model]': {required: true},
-               'car[engine]': {required: true},
-               'car[transmission]': {required: true},
+               'car[make]': {required: true, maxlength: 50},
+               'car[model]': {required: true, maxlength: 50},
+               'car[engine]': {required: true, maxlength: 50},
+               'car[transmission]': {required: true, maxlength: 50},
                'car[description]': {required: true}
           },
           messages: {
-               'car[make]': {required: 'You must provide the brand of your car'},
-               'car[model]': {required: 'You must provide the model of your car'},
-               'car[engine]': {required: 'You must provide the engine of your car'},
-               'car[transmission]': {required: 'You must provide the type of transmission your car uses'},
+               'car[make]': {required: 'You must provide the brand of your car', maxlength: "Brand name cannot be longer than 50 characters"},
+               'car[model]': {required: 'You must provide the model of your car', maxlength: "Model name cannot be longer than 50 characters"},
+               'car[engine]': {required: 'You must provide the engine of your car', maxlength: "Transmission name or type name cannot be longer than 50 characters"},
+               'car[transmission]': {required: 'You must provide the name or type of transmission your car uses', maxlength: "Engine name cannot be longer than 50 characters"},
                'car[description]': {required: 'Please provide a description of your car'}
           },
           errorElement : 'div'
@@ -75,13 +75,13 @@ function ValidateEditUserForm(){
           rules: {
                'user[email]': {required: true, email: true},
                'user[password]': {required: true, minlength: 6},
-               'user[password_confirmation]': {required: true},
+               'user[password_confirmation]': {required: true, equalTo: user_password},
                'user[current_password]': {required: true}
           },
           messages: {
                'user[email]': {required: 'Please provide your email', email: 'Please enter a valid email address'},
                'user[password]': {required:'Please enter your password', minlength: 'Please enter 6 or more characters'},
-               'user[password_confirmation]': {required:'Please confirm your password'},
+               'user[password_confirmation]': {required:'Please confirm your password', equalTo: 'Password confirmation does not match'},
                'user[current_password]': {required:'Please provide your current password'}
           },
           errorElement : 'div'
@@ -106,7 +106,6 @@ function ValidateCommentForm(){
      $('#comment_form').validate({
           rules: {
                'comment[content]': {required: true},
-
           },
           messages: {
                'comment[content]': {required: 'Comment cannot be empty'},
