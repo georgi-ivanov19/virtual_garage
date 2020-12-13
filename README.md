@@ -11,11 +11,11 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation run rake db:seed
 
 * Database initialization
 
-* How to run the test suite
+* How to run the test suite - type rake test in the terminal
 
 * Services (job queues, cache servers, search engines, etc.)
 
