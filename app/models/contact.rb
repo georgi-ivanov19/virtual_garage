@@ -1,6 +1,7 @@
 class Contact < MailForm::Base
     attribute :name, validate: true
-    attribute :email, validate: /\A[^@\s]+@[^@\s]+\z/i
+    attribute :email
+    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
     attribute :message, validate: true
     attribute :hidden, captcha: true
 

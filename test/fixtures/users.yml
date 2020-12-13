@@ -3,19 +3,34 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one:
-  id: 2
-  username: jorjooo
-  email: asd@asd.com
-# column: value
-#
-two:
-  id: 3
-  username: jorjooo1
-  email: sad@asd.com
-# column: value
+
 user_001:
-  id: 1
   username: JohnDoe
   email: test@sample.com
+  encrypted_password: 'testpass'
+
+no_email:
+  username: JohnDoe1
+  email: ''
+  encrypted_password: 'testpass'
+
+no_password:
+  username: JohnDoe3
+  encrypted_password: ''
+  email: test2@sample.com
+
+no_username:
+  username: ''
+  email: test3@sample.com
+  encrypted_password: 'testpass'
+
+
+invalid_email:
+  username: aaaaJohnDoe
+  email: 123@
+  encrypted_password: 'testpass'
+
+long_username:
+  username: JohnDoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  email: test@saample.com
+  encrypted_password: 'testpass'

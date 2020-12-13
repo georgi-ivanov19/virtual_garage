@@ -7,7 +7,10 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     post user_session_url
     @comment = comments(:one)
     @user = users(:user_001)
-    @car = cars(:one)
+    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
+    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
+    @car = cars(:valid_car)
+    @car.images = [@image1, @image2]
     follow_redirect!
     assert_response :success
   end
@@ -23,13 +26,13 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy comments when user is destroyed" do
     assert_difference('Comment.count', -@user.comments.count) do
-      @user.destroy 
+      @user.destroy
     end
   end
 
   test "should destroy comments when car is destroyed" do
     assert_difference('Comment.count', -@car.comments.count) do
-      @car.destroy 
+      @car.destroy
     end
   end
 

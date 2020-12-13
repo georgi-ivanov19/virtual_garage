@@ -5,12 +5,15 @@ class CommentTest < ActionDispatch::IntegrationTest
     get '/users/sign_in'
     sign_in users(:user_001)
     post user_session_url
-    @car = cars(:one)
+    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
+    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
+    @car = cars(:valid_car)
+    @car.images = [@image1, @image2]
     @user = users(:user_001)
     follow_redirect!
     assert_response :success
   end
-  
+
   test "should save valid comment" do
     @comment = @user.comments.build(content: "Test Comment", car_id: @car.id)
     assert @comment.content == "Test Comment"
