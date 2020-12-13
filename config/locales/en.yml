@@ -34,8 +34,7 @@ en:
   helpers:
     placeholder:
       comment:
-        contentin: 'Enter a comment...'
-        contentout: 'You need to be signed in to enter a comment!'
+        content: 'Enter a comment...'
       # search-form:
         #   search: 'Search for a user's garage...' TODO
       contact: #contact form labels
@@ -74,7 +73,7 @@ en:
   comments:
     form:
       enter_comment: 'Enter a comment...'
-      sign_in_to_comment: 'You need to be signed in to enter a comment!'
+      disabled_comment: 'You need to be signed in to enter a comment!'
   comment_section:
     comments: 'Comments'
     empty_section: 'The comment section for this car is empty'

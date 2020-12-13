@@ -1,4 +1,4 @@
-= form_with model: @comment, html: {id: 'comment_form'}, url: @car_path do |f|
+= form_for @comment, html: {id: 'comment_form', remote: true}, url: @car_path do |f|
   - if @comment.errors.any?
     #error_explanation
       %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
@@ -7,8 +7,11 @@
           %li= message
 
   -if user_signed_in?
-    = f.text_area :contentin, placeholder: true, id: 'comment-field', class: 'form-control', rows:'2'
+    = f.text_area :content, placeholder: true, id: 'comment-field', class: 'form-control', rows:'2'
   -else
-    = f.text_area :contentout, placeholder: true, id: 'comment-field', class: 'form-control', rows: '2', disabled: true
+
+    = f.text_area :content, placeholder: true, id: 'comment-field', class: 'form-control', rows: '2', disabled: true
   = f.hidden_field :car_id, value: params[:id]
-  = f.submit 'Submit', class: 'btn',remote: true, id: 'comment-submit-button', disabled: !user_signed_in?
+  = f.submit 'Submit', class: 'btn', id: 'comment-submit-button', disabled: !user_signed_in?
+  -if !user_signed_in?
+    %span.error=t('.disabled_comment')
