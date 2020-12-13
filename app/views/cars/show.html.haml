@@ -1,45 +1,45 @@
 %div.show_wrapper.container-fluid
   .img-wrapper
     -if @car.images.attached?
-      =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img' 
+      =image_tag @car.thumbnail(0), class: 'img-responsive', :id => 'show-img'
   .text-wrapper
     %p.car-show-text{id: 'description'}
-      %b Description:
-      = @car.description 
+      %b=t('.description')
+      = @car.description
     %p.car-show-text
-      %b Make:
+      %b=t('.make')
       = @car.make
     %p.car-show-text
-      %b Model:
+      %b=t('.model')
       = @car.model
     %p.car-show-text
-      %b Engine:
+      %b=t('.engine')
       = @car.engine
     %p.car-show-text
-      %b Transmission:
+      %b=t('.transmission')
       = @car.transmission
     %p.car-show-text{id: 'car-show-email'}
-      %b Added by:
+      %b=t('.added_by')
       = @car.user.username
   %br
   .small-img
     -if @car.images.attached?
-      -(0...@car.images.count).each do |image| 
-        =image_tag @car.thumbnail(image), class: 'img-responsive', class: 'show-img-small'    
-  - if user_signed_in? && current_user.id == @car.user_id 
+      -(0...@car.images.count).each do |image|
+        =image_tag @car.thumbnail(image), class: 'img-responsive', class: 'show-img-small'
+  - if user_signed_in? && current_user.id == @car.user_id
     .btns-wrapper
-      = link_to 'Edit', edit_car_path(@car), :class => 'link-button'
-      = link_to 'Delete', @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }      
-.comment-form-wrapper  
+      = link_to t('.edit'), edit_car_path(@car), :class => 'link-button'
+      = link_to t('.delete'), @car, :class => 'link-button', method: :delete, data: { confirm: 'Are you sure?' }
+.comment-form-wrapper
   = render 'comments/form'
 .comment-section-wrapper
   %h2=t('comment_section.comments')
   -if @comments.first.nil?
     %p=t('comment_section.empty_section')
-  -else  
+  -else
     - @comments.each do |comment|
       -if comment.car_id == @car.id
         %p
           ="#{comment.user.username} on #{comment.created_at.strftime("%d-%b-%Y")} at #{comment.created_at.strftime("%I:%M%p")} said: #{comment.content}"
           -if user_signed_in? && comment.user_id == current_user.id
-            = link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure you want to delete your comment?'}, remote: true, id: "delete-link"
+            = link_to t('.delete'), comment, method: :delete, data: { confirm: t('.delete_comment_confirmation')}, remote: true, id: "delete-link"
