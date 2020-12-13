@@ -15,6 +15,18 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not get car#new if signed out" do
+    sign_out @user
+    get new_car_url
+    assert_redirected_to new_user_session_url
+  end
+
+  test "should not get car#edit if signed out" do
+    sign_out @user
+    get edit_car_url(@car)
+    assert_redirected_to new_user_session_url
+  end
+
   test "should get index" do
     get cars_url
     assert_response :success
@@ -64,7 +76,6 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update car" do
     patch car_url(@car), params: { car: { description: @car.description, engine: @car.engine, make: @car.make, model: @car.model, transmission: @car.transmission } }
-    # assert_redirected_to car_url(@car)
     assert_response :success
   end
 
