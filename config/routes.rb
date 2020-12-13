@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'cars#index'
   resources :comments, only: [:create, :destroy]
   resources :contacts, only: [:new, :create]
   devise_for :users
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :cars
-  root 'cars#index'
   get '/search', to: 'cars#search'
   get '/garage/:id', to: 'cars#garage', as: 'garage'
   get '/FAQs', to: 'cars#FAQs', as: 'faqs'

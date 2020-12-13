@@ -5,13 +5,14 @@ class Car < ApplicationRecord
     validates :make, :model, :description, :transmission, :engine, :user_id, presence: true
     validate :image_type
     validates_length_of :make, :model, :transmission, :engine, maximum: 50
-   def thumbnail input
-    return self.images[input].variant(resize: '600x337.5!').processed
-   end
+
+    def thumbnail input
+        return self.images[input].variant(resize: '600x337.5!').processed
+    end
 
    #validate that there are images attached and they are in either jpeg or png format
-   private
-   def image_type
+    private
+    def image_type
     if images.attached? == false
         errors.add(:images, "are missing!")
         end
