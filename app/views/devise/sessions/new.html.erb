@@ -1,6 +1,6 @@
 <div class='form-content-wrapper'>
 <div class='form_wrapper'>
-<h2 id="login">Log in</h2>
+<h2 id="login"><%=t('.login')%></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'login_form'}) do |f| %>
   <div class="field",>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit 'Log in'%>
   </div>
 <% end %>
 

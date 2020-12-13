@@ -1,6 +1,6 @@
 <div class='form-content-wrapper'>
 <div class='form_wrapper'>
-<h2>Sign up</h2>
+<h2><%=t('.sign_up')%></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'new_user_form'}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit %>
   </div>
 <% end %>
 
