@@ -93,4 +93,14 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  #views
+  test "visiting the root signed in" do
+    #sign in user to test the navbar when signed in
+    sign_in @user
+    visit root_url
+    assert_select '.navbar' do
+      #only one header element in the navbar
+      assert_select '.navbar-header', {:count => 1}
+    end
+  end
 end

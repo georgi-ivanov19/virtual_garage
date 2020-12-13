@@ -10,12 +10,26 @@ class UserMailerTest < ActionMailer::TestCase
     email = UserMailer.notify_user(user).deliver
     assert !ActionMailer::Base.deliveries.empty?
 
-    # Test the headers of the sent email contains what we expect it to
+    #Check if the headers and content of the sent email contains what we expect it to
     assert_equal email.from, ['virtualgaragee1@gmail.com']
     assert_equal [user.email], email.to
     assert_equal "Virtual Garage Sign up Confirmation", email.subject
+    assert_select_email do
+      #verifying email body content
+      assert_select "#email-title", "Welcome to Virtual Garage, #{user.username}!"
+      assert_select '.email', {:count => 5}
+      assert_select ('.email') do
+        assert_select 'span', 3
+        assert_select 'p', 2
+      end
+      assert_select "#signature", "-The Virtual Garage team"
+      assert_select "#faqs", "FAQs"
+      assert_select "#contact", "Contact us"
+      assert_select "#vg2020", "© Virtual Garage #{Time.now.year}"
+    end
   end
 
+  #Short test for ActionMailer environment settings
   test 'should get correct mailer settings' do
     assert_equal ActionMailer::Base.delivery_method, :test
     assert_equal ActionMailer::Base.default_url_options, { host: 'localhost', port: 3000 }
