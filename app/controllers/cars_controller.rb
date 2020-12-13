@@ -7,11 +7,11 @@ class CarsController < ApplicationController
   def index
     @cars = Car.all
   end
-  
+
   def garage
     @cars = Car.all
     if (User.find_by_username(params[:id]))
-      @username = params[:id];   
+      @username = params[:id];
     else
       redirect_to root_path, :notice => 'User not found'
     end
@@ -19,15 +19,15 @@ class CarsController < ApplicationController
 
   def search
     if params[:search].present?
-      redirect_to garage_path(params[:search]) 
+      redirect_to garage_path(params[:search])
     end
   end
-  
+
   # GET /cars/1
   # GET /cars/1.json
-  def show 
+  def show
     # @comment = current_user.comments.new
-    @comment = Comment.new   
+    @comment = Comment.new
     @comments = @car.comments.order('created_at DESC')
     @images = @car.images
   end
@@ -45,7 +45,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = current_user.cars.build(car_params)
-    
+
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: t('confirmations.successful_car')}
@@ -63,7 +63,7 @@ class CarsController < ApplicationController
     @car.images.purge
     respond_to do |format|
       if @car.update(car_params)
-        
+
         format.html { redirect_to @car, notice: t('.confirmations.successful_car_edit') }
         format.json { render :show, status: :ok, location: @car }
       else
@@ -76,6 +76,7 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   # DELETE /cars/1.json
   def destroy
+    @car.images.purge
     @car.destroy
     respond_to do |format|
       format.html { redirect_to cars_url, notice: t('.confirmations.successful_car_destroy') }
