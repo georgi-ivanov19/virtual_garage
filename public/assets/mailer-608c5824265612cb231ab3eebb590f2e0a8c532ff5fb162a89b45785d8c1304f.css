@@ -1,0 +1,64 @@
+/* line 4, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+.email-body {
+  padding: 0px;
+  background: #585858;
+  text-align: center;
+}
+
+/* line 9, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+#email-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* line 13, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+.email-table {
+  width: 720px;
+  padding: 20px;
+  background: #F0E4E5;
+  margin: 40px auto;
+  text-align: left;
+  font-family: 'Helvetica Neue';
+}
+/* line 20, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+.email-table a {
+  font-size: 20px;
+}
+
+/* line 24, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+.title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 34px;
+  color: grey;
+}
+
+/* line 30, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+td.top {
+  text-align: center;
+}
+
+/* line 33, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+p.email {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* line 37, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+span.email {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* line 41, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+.mail-footer {
+  text-align: center;
+  background-color: #F0E4E5;
+}
+
+/* line 45, /mnt/c/Users/PC/Desktop/com2025_coursework/virtual_garage/app/assets/stylesheets/mailer.css.scss */
+#logo {
+  align-self: center;
+  width: 67%;
+  margin-bottom: 75px;
+}
