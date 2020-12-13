@@ -1,0 +1,18 @@
+%h1 Comments
+.table-wrapper
+  %table
+    %thead
+      %tr
+        %th Content
+        %th User ID
+        %th Car ID
+        %th
+
+    %tbody
+      - @comments.each do |comment|
+        %tr
+          %td= comment.content
+          %td= comment.user_id
+          %td= comment.car_id
+          %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+

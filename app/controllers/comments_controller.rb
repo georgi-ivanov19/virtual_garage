@@ -1,6 +1,12 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
+
+  def index
+    @comments = Comment.all.order('car_id')
+  end
+
   # POST /comments
   # POST /comments.json
   def create
@@ -15,7 +21,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy

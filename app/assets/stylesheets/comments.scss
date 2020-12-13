@@ -1,6 +1,10 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$bgcolor: #F0E4E5;
+
+
 #comment-field{
     width: 580px;
     margin-top: 10px;
@@ -15,7 +19,25 @@
 #comment-submit-button:hover{
     background-color: fade-in($color: #b9b9b9, $amount: 1);
 }
+.table-wrapper{
+    margin: 0 auto;
+    width: 800px;
+    table{
+        width: 100%;
+        height: auto;
+        border-style: solid;
+        th{
+            width: 150px;
+        }
+        tr{
+            border-style: solid;
+            height: 20px;
+        }
+    }
+    background-color: $bgcolor;
+    border-style: solid;
 
+}
 .comment-section-wrapper{
     width: 100%;
     background-color: rgb(136, 136, 136);

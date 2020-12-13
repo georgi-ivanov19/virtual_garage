@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'cars#index'
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :index]
   resources :contacts, only: [:new, :create]
   devise_for :users
   devise_scope :user do
