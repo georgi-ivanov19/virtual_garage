@@ -1,11 +1,11 @@
-%h1 Comments
+%h1=t('.comments')
 .table-wrapper
   %table
     %thead
       %tr
-        %th Content
-        %th User ID
-        %th Car ID
+        %th=t('.content')
+        %th=t('.user_id')
+        %th=t('.car_id')
         %th
 
     %tbody
@@ -14,5 +14,5 @@
           %td= comment.content
           %td= comment.user_id
           %td= comment.car_id
-          %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to t('.destroy'), comment, method: :delete, data: { confirm: 'Are you sure?' }
 

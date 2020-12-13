@@ -35,7 +35,7 @@ en:
       welcome: "Welcome to Virtual Garage, "
       signature: '-The Virtual Garage team'
       beginning: 'This is a confirmation of your registration to'
-      sentence_end: ', you are now ready to add your car to our collection. What are you waiting for?'
+      sentence_end: ', you are now ready to add your car to our collection. What are you waiting for? '
       go: 'Go ahead!'
       unready: "If you do not feel ready yet, feel free to browse through our collection of cars. From Japan to Germany, modified or not, there is a car for every style"
       thanks: 'Thank you for your registration. We hope you enjoy your time at Virtual Garage'
@@ -96,10 +96,19 @@ en:
     footer: # footer text
       faqs: 'FAQs'
       contact: 'Contact us'
+    email_footer: # email footer text
+      faqs: 'FAQs'
+      contact: 'Contact us'
   comments:
     form:
       enter_comment: 'Enter a comment...'
       disabled_comment: 'You need to be signed in to enter a comment!'
+    index:
+      comments: 'Comments'
+      content: 'Content'
+      user_id: "User ID"
+      car:id: 'Car ID'
+      destroy: 'Destroy'
   comment_section:
     comments: 'Comments'
     empty_section: 'The comment section for this car is empty'
