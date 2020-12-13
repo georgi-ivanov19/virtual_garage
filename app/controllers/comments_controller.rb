@@ -1,14 +1,13 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user! 
-
+  before_action :authenticate_user!
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = current_user.comments.new(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_back fallback_location:'/', notice: t('confirmations.successful_comment') }
+        format.html {redirect_back fallback_location:'/', notice: t('confirmations.successful_comment')}
         format.json {render @car, status: :created, location: @car}
       else
         format.html { redirect_to @car, notice: t('errors.unsuccessful_comment') }
@@ -16,7 +15,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "check_username" => "users#check_username", as: :check_username
   end
 
-  resources :cars 
+  resources :cars
   root 'cars#index'
   get '/search', to: 'cars#search'
   get '/garage/:id', to: 'cars#garage', as: 'garage'
