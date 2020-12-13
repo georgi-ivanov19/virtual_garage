@@ -30,8 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: 'Virtual Garage'
-  helpers:
+  title: 'Virtual Garage' #app title
+  helpers: #submit button text for the corresponding action
     submit:
       car:
         create: 'Create car'
@@ -42,12 +42,10 @@ en:
         create: 'Sign up'
         update: 'Update user'
       session:
-        new: 'Sign in betch'
+        new: 'Sign in'
     placeholder:
       comment:
         content: 'Enter a comment...'
-      # search-form:
-        #   search: 'Search for a user's garage...' TODO
       contact: #contact form labels
         name: 'Your Name'
         email: 'Your Email'

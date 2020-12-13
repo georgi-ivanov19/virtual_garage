@@ -1,19 +1,68 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: 1
-  make: NISSAN
+valid_car:
+  make: Nissan
   model: Silvia S13
   engine: SR20DET
   transmission: Manual
   description: The perfect drift car
-  user_id: 1
+  user: user_001
 
-one:
-  id: 2
-  make: NISSAN
+valid_car2:
+  make: Nissan
+  model: Silvia S13
+  engine: SR20DET
+  transmission: Manual
+  description: The perfect drift car
+  user: user_001
+
+missing_brand:
   model: Silvia S15
   engine: 2JZ-GTE
   transmission: Sequential
   description: The perfect drift car
-  user_id: 1
+  user: user_001
+
+missing_model:
+  make: Nissan
+  engine: SR20DET
+  transmission: Manual
+  description: The perfect drift car
+  user: user_001
+
+missing_engine:
+  make: Nissan
+  model: Silvia S13
+  transmission: Manual
+  description: The perfect drift car
+  user: user_001
+
+missing_transmission:
+  make: Nissan
+  model: Silvia S13
+  engine: SR20DET
+  description: The perfect drift car
+  user: user_001
+
+missing_description:
+  make: Nissan
+  model: Silvia S13
+  engine: SR20DET
+  transmission: Manual
+  user: user_001
+
+missing_images:
+  make: Nissan
+  model: Silvia S13
+  engine: SR20DET
+  transmission: Manual
+  description: The perfect drift car
+  user: user_001
+
+wrong_image_file:
+  make: Nissan
+  model: Silvia S13
+  engine: SR20DET
+  transmission: Manual
+  description: The perfect drift car
+  user: user_001

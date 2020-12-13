@@ -5,13 +5,14 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     get '/users/sign_in'
     sign_in users(:user_001)
     post user_session_url
-    @car = cars(:one)
+    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
+    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
+    @car = cars(:valid_car)
+    @car.images = [@image1, @image2]
     @comment = comments(:one)
     @user = users(:user_001)
     follow_redirect!
     assert_response :success
-    @image1 = fixture_file_upload('test_images/s13-1.jpg', 'image/jpeg')
-    @image2 = fixture_file_upload('test_images/s13-2.jpg', 'image/jpeg')
   end
 
   test "should get index" do
@@ -41,6 +42,16 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to car_url(Car.last)
   end
 
+  test "should get garage" do
+    get garage_url(@user)
+    assert_response :found
+  end
+
+  test "should get FAQs" do
+    get faqs_url
+    assert_response :success
+  end
+
   test "should show car" do
     get car_url(@car)
     assert_response :success
@@ -67,8 +78,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy car when user is destroyed" do
     assert_difference('Car.count', -@user.cars.count) do
-      @user.destroy 
+      @user.destroy
     end
   end
-  
+
 end

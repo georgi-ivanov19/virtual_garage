@@ -2,10 +2,10 @@
 
 one:
   content: First fixture
-  user_id: 1
-  car_id: 1
+  user: user_001
+  car_id: valid_car
 
 two:
   content: Second fixture
-  user_id: 2
-  car_id: 1
+  user: user_001
+  car_id: valid_car
