@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   after_create :notify_user
   after_update :user_edited
+  before_destroy :account_deleted
 
   #send an email upon sign up
   def notify_user
@@ -19,5 +20,9 @@ class User < ApplicationRecord
 
   def user_edited
     UserMailer.user_edited(self).deliver
+  end
+
+  def account_deleted
+    UserMailer.account_deleted(self).deliver
   end
 end

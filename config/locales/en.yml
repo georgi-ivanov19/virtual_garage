@@ -47,6 +47,14 @@ en:
       review2: 'to review the changes that have been made.'
       review_text: 'You can log in to review the changes that have been made.'
       signature: '-The Virtual Garage team'
+    account_deleted:
+      hello: 'Hello '
+      beginning: 'Or should we say goodbye. We at Virtual Garage are sad to see you leave!'
+      again: 'Nevertheless, if you ever want to join us again, you can freely do it from'
+      here: 'here'
+      again_text: 'Nevertheless, if you ever want to join us again'
+      ending: 'Hope you had a nice time browsing your favorite rides! See you on the roads'
+      signature: '-The Virtual Garage team'
   title: 'Virtual Garage' #app title
   helpers: #submit button text for the corresponding action
     submit:

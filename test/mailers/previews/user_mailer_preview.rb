@@ -7,4 +7,9 @@ class UserMailerPreview < ActionMailer::Preview
     def user_edited
         UserMailer.user_edited(User.first)
     end
+
+    def account_deleted
+        UserMailer.account_deleted(User.first)
+    end
+
 end

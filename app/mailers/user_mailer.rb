@@ -8,4 +8,9 @@ class UserMailer < ApplicationMailer
         @user = user
         mail(to: @user.email, subject: 'Your Virtual Garage password has been changed')
     end
+
+    def account_deleted(user)
+        @user = user
+        mail(to: @user.email, subject: 'Your Virtual Garage account has been cancelled')
+    end
 end
