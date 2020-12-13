@@ -1,9 +1,27 @@
-%p
-  Welcome, #{@user.username}:
-%br/
-%p You have successfully signed up to Virtual Garage!
-%p Thank you!
-%br/
-%p -The Virtual Garage team
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %table.email-table
+      %tbody
+        %tr.header-row
+
+          %td.top
+            %img{:src => asset_url("virtualgarage.png"), :id => 'logo'}
+            .title{id: 'email-title'}=t('.welcome') + "#{@user.username}!"
+        %tr.body-row
+          %td
+            %span.email= t('.beginning')
+            = link_to(t('title'), root_url)
+            %span.email= t('.sentence_end')
+            = link_to(t('.go'), new_car_url)
+            %p.email= t('.unready')
+            %p.email= t('.thanks')
+            %span.email{id: 'signature'}= t('.signature')
+    .mail-footer
+      = render 'shared/footer'
+
+
 
 

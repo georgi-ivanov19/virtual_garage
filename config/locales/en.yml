@@ -30,6 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  user_mailer:
+    notify_user: #welcome email
+      welcome: "Welcome to Virtual Garage, "
+      signature: '-The Virtual Garage team'
+      beginning: 'This is a confirmation of your registration to'
+      sentence_end: ', you are now ready to add your car to our collection. What are you waiting for?'
+      go: 'Go ahead!'
+      unready: "If you do not feel ready yet, feel free to browse through our collection of cars. From Japan to Germany, modified or not, there is a car for every style"
+      thanks: 'Thank you for your registration. We hope you enjoy your time at Virtual Garage'
   title: 'Virtual Garage' #app title
   helpers: #submit button text for the corresponding action
     submit:
