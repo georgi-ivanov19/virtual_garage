@@ -7,7 +7,6 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
     assert_template 'contacts/new'
     assert_response :success
 
-
     assert_template layout: "layouts/application", partial: "_headerin"
     assert_template layout: "layouts/application", partial: "_footer"
     end

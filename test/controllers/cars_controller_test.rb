@@ -95,7 +95,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", "Virtual Garage FAQs"
     assert_select ".question",{count: 4}
     assert_select ".answer",{count: 4}
-    assert_select 'nav', true
+    assert_template layout: 'layouts/application', partial: "_headerout"
     assert_template layout: "layouts/application", partial: "_footer"
     assert_response :success
   end
