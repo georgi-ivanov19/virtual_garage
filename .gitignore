@@ -2,3 +2,4 @@
 /config/application.yml
 /storage
 /tmp/storage
+/log
