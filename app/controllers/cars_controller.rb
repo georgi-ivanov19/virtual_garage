@@ -10,7 +10,8 @@ class CarsController < ApplicationController
 
   def garage
     @cars = Car.all
-    if (User.find_by_username(params[:id]))
+    @user = User.find_by_username(params[:id])
+    if (@user)
       @username = params[:id];
     else
       redirect_to root_path, :notice => 'User not found'
