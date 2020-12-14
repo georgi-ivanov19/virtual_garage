@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+#Ignore application configuration
+/config/application.yml
+/storage
+/tmp/storage
+/log/test.log
+=======
+#Ignore application configuration
+/config/application.yml
+/storage
+/tmp/storage
+>>>>>>> 8e7df3715d29d641d54c31fe62dfdcbea066054c
