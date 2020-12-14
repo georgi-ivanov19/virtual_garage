@@ -65,7 +65,7 @@ class CarsController < ApplicationController
     respond_to do |format|
       if @car.update(car_params)
 
-        format.html { redirect_to @car, notice: t('.confirmations.successful_car_edit') }
+        format.html { redirect_to @car, notice: t('confirmations.successful_car_edit') }
         format.json { render :show, status: :ok, location: @car }
       else
         format.html { render :edit }
