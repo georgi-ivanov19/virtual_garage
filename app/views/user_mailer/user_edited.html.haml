@@ -8,6 +8,7 @@
         %tr.header-row
 
           %td.top
+           - #I understand that this is local and will not show up on the email, the purpose is for the preview
             %img{:src => asset_url("virtualgarage.png"), :id => 'logo'}
             .title{id: 'email-title'}=t('.hello') + "#{@user.username},"
         %tr.body-row
