@@ -162,3 +162,31 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 end
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get edit_car_url(@car)
+    assert_response :success
+  end
+
+  test "should update car" do
+    patch car_url(@car), params: { car: { description: @car.description, engine: @car.engine, make: @car.make, model: @car.model, transmission: @car.transmission } }
+    # assert_redirected_to car_url(@car)
+    assert_response :success
+  end
+
+  test "should destroy car" do
+    assert_difference('Car.count', -1) do
+      delete car_url(@car)
+    end
+
+    assert_redirected_to cars_url
+  end
+
+  test "should destroy car when user is destroyed" do
+    assert_difference('Car.count', -@user.cars.count) do
+      @user.destroy
+    end
+  end
+
